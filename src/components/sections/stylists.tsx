@@ -14,9 +14,9 @@ export default function Stylists() {
     <section id="stylists" className="py-16 md:py-24 bg-card">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-12">
-          <h2 className="font-headline text-4xl md:text-5xl font-bold">Meet Our Stylists</h2>
+          <h2 className="font-headline text-4xl md:text-5xl font-bold">Conheça Nossos Estilistas</h2>
           <p className="text-lg text-muted-foreground mt-4 max-w-3xl mx-auto">
-            Our talented team of passionate stylists is dedicated to the craft of barbering and client satisfaction.
+            Nossa talentosa equipe de estilistas apaixonados é dedicada à arte da barbearia e à satisfação do cliente.
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

@@ -6,6 +6,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { CalendarIcon, Clock, User, Scissors } from "lucide-react";
 import { format } from "date-fns";
+import { ptBR } from "date-fns/locale";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -44,16 +45,16 @@ import { cn } from "@/lib/utils";
 import { services, stylists } from "@/lib/data";
 
 const bookingSchema = z.object({
-  name: z.string().min(2, "Name must be at least 2 characters."),
-  service: z.string({ required_error: "Please select a service." }),
-  stylist: z.string({ required_error: "Please select a stylist." }),
-  date: z.date({ required_error: "A date is required." }),
-  time: z.string({ required_error: "Please select a time." }),
+  name: z.string().min(2, "O nome deve ter pelo menos 2 caracteres."),
+  service: z.string({ required_error: "Por favor, selecione um serviço." }),
+  stylist: z.string({ required_error: "Por favor, selecione um estilista." }),
+  date: z.date({ required_error: "A data é obrigatória." }),
+  time: z.string({ required_error: "Por favor, selecione um horário." }),
 });
 
 const availableTimes = [
-  "09:00 AM", "10:00 AM", "11:00 AM", "12:00 PM",
-  "01:00 PM", "02:00 PM", "03:00 PM", "04:00 PM", "05:00 PM", "06:00 PM"
+  "09:00", "10:00", "11:00", "12:00",
+  "13:00", "14:00", "15:00", "16:00", "17:00", "18:00"
 ];
 
 export function BookingModal({ children }: { children: React.ReactNode }) {
@@ -67,8 +68,8 @@ export function BookingModal({ children }: { children: React.ReactNode }) {
   function onSubmit(data: z.infer<typeof bookingSchema>) {
     console.log(data);
     toast({
-      title: "Booking Confirmed!",
-      description: `Thank you, ${data.name}! Your appointment for a ${services.find(s => s.name === data.service)?.name} with ${data.stylist} is set for ${format(data.date, "PPP")} at ${data.time}.`,
+      title: "Agendamento Confirmado!",
+      description: `Obrigado, ${data.name}! Seu horário para um ${services.find(s => s.name === data.service)?.name} com ${data.stylist} está marcado para ${format(data.date, "PPP", { locale: ptBR })} às ${data.time}.`,
     });
     setOpen(false);
     form.reset();
@@ -79,9 +80,9 @@ export function BookingModal({ children }: { children: React.ReactNode }) {
       <DialogTrigger asChild>{children}</DialogTrigger>
       <DialogContent className="sm:max-w-[425px] bg-background">
         <DialogHeader>
-          <DialogTitle className="font-headline text-2xl">Book an Appointment</DialogTitle>
+          <DialogTitle className="font-headline text-2xl">Agende um Horário</DialogTitle>
           <DialogDescription>
-            Choose your service, stylist, and time. We look forward to seeing you.
+            Escolha seu serviço, estilista e horário. Estamos ansiosos para te ver.
           </DialogDescription>
         </DialogHeader>
         <Form {...form}>
@@ -91,9 +92,9 @@ export function BookingModal({ children }: { children: React.ReactNode }) {
               name="name"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Full Name</FormLabel>
+                  <FormLabel>Nome Completo</FormLabel>
                   <FormControl>
-                    <Input placeholder="John Doe" {...field} />
+                    <Input placeholder="João da Silva" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -104,10 +105,10 @@ export function BookingModal({ children }: { children: React.ReactNode }) {
               name="service"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Service</FormLabel>
+                  <FormLabel>Serviço</FormLabel>
                   <Select onValueChange={field.onChange} defaultValue={field.value}>
                     <FormControl>
-                      <SelectTrigger><Scissors className="mr-2 h-4 w-4" /> <SelectValue placeholder="Select a service" /></SelectTrigger>
+                      <SelectTrigger><Scissors className="mr-2 h-4 w-4" /> <SelectValue placeholder="Selecione um serviço" /></SelectTrigger>
                     </FormControl>
                     <SelectContent>
                       {services.map((service) => (
@@ -124,10 +125,10 @@ export function BookingModal({ children }: { children: React.ReactNode }) {
               name="stylist"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Stylist</FormLabel>
+                  <FormLabel>Estilista</FormLabel>
                   <Select onValueChange={field.onChange} defaultValue={field.value}>
                     <FormControl>
-                      <SelectTrigger><User className="mr-2 h-4 w-4" /><SelectValue placeholder="Select a stylist" /></SelectTrigger>
+                      <SelectTrigger><User className="mr-2 h-4 w-4" /><SelectValue placeholder="Selecione um estilista" /></SelectTrigger>
                     </FormControl>
                     <SelectContent>
                       {stylists.map((stylist) => (
@@ -144,7 +145,7 @@ export function BookingModal({ children }: { children: React.ReactNode }) {
               name="date"
               render={({ field }) => (
                 <FormItem className="flex flex-col">
-                  <FormLabel>Date</FormLabel>
+                  <FormLabel>Data</FormLabel>
                   <Popover>
                     <PopoverTrigger asChild>
                       <FormControl>
@@ -156,9 +157,9 @@ export function BookingModal({ children }: { children: React.ReactNode }) {
                           )}
                         >
                           {field.value ? (
-                            format(field.value, "PPP")
+                            format(field.value, "PPP", { locale: ptBR })
                           ) : (
-                            <span>Pick a date</span>
+                            <span>Escolha uma data</span>
                           )}
                           <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
                         </Button>
@@ -166,6 +167,7 @@ export function BookingModal({ children }: { children: React.ReactNode }) {
                     </PopoverTrigger>
                     <PopoverContent className="w-auto p-0" align="start">
                       <Calendar
+                        locale={ptBR}
                         mode="single"
                         selected={field.value}
                         onSelect={field.onChange}
@@ -185,10 +187,10 @@ export function BookingModal({ children }: { children: React.ReactNode }) {
               name="time"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Time</FormLabel>
+                  <FormLabel>Horário</FormLabel>
                   <Select onValueChange={field.onChange} defaultValue={field.value}>
                     <FormControl>
-                      <SelectTrigger><Clock className="mr-2 h-4 w-4" /><SelectValue placeholder="Select a time" /></SelectTrigger>
+                      <SelectTrigger><Clock className="mr-2 h-4 w-4" /><SelectValue placeholder="Selecione um horário" /></SelectTrigger>
                     </FormControl>
                     <SelectContent>
                        {availableTimes.map((time) => (
@@ -201,7 +203,7 @@ export function BookingModal({ children }: { children: React.ReactNode }) {
               )}
             />
             <DialogFooter>
-              <Button type="submit" className="w-full">Confirm Booking</Button>
+              <Button type="submit" className="w-full">Confirmar Agendamento</Button>
             </DialogFooter>
           </form>
         </Form>

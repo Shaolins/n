@@ -22,8 +22,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent } from "@/components/ui/card";
 
 const FormSchema = z.object({
-  haircut: z.string().min(3, "Please describe your haircut."),
-  style: z.string().min(3, "Please describe your desired style."),
+  haircut: z.string().min(3, "Por favor, descreva seu corte de cabelo."),
+  style: z.string().min(3, "Por favor, descreva o estilo desejado."),
 });
 
 type FormValues = z.infer<typeof FormSchema>;
@@ -51,11 +51,11 @@ export default function ProductRecommender() {
       if (result.products && result.products.length > 0) {
         setRecommendations(result.products);
       } else {
-        setError("Could not generate recommendations. Please try a different description.");
+        setError("Não foi possível gerar recomendações. Por favor, tente uma descrição diferente.");
       }
     } catch (e) {
       console.error(e);
-      setError("An unexpected error occurred. Please try again later.");
+      setError("Ocorreu um erro inesperado. Por favor, tente novamente mais tarde.");
     } finally {
       setIsLoading(false);
     }
@@ -67,10 +67,10 @@ export default function ProductRecommender() {
         <div className="text-center mb-12">
           <h2 className="font-headline text-4xl md:text-5xl font-bold flex items-center justify-center gap-4">
             <Wand2 className="h-10 w-10 text-accent" />
-            AI Product Recommender
+            Recomendador de Produtos com IA
           </h2>
           <p className="text-lg text-muted-foreground mt-4 max-w-3xl mx-auto">
-            Not sure what to use? Describe your hair and desired style, and our AI will suggest the perfect products for you.
+            Não sabe o que usar? Descreva seu cabelo e o estilo desejado, e nossa IA sugerirá os produtos perfeitos para você.
           </p>
         </div>
 
@@ -83,12 +83,12 @@ export default function ProductRecommender() {
                   name="haircut"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="text-lg font-semibold">Your Haircut</FormLabel>
+                      <FormLabel className="text-lg font-semibold">Seu Corte de Cabelo</FormLabel>
                       <FormControl>
-                        <Input placeholder="e.g., Mid-length fade, curly top" {...field} />
+                        <Input placeholder="ex: Fade em degradê, topo cacheado" {...field} />
                       </FormControl>
                       <FormDescription>
-                        Describe your current haircut.
+                        Descreva seu corte de cabelo atual.
                       </FormDescription>
                       <FormMessage />
                     </FormItem>
@@ -99,16 +99,16 @@ export default function ProductRecommender() {
                   name="style"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="text-lg font-semibold">Desired Style</FormLabel>
+                      <FormLabel className="text-lg font-semibold">Estilo Desejado</FormLabel>
                       <FormControl>
                         <Textarea
-                          placeholder="e.g., Textured and messy with a natural finish, or sharp and slicked back."
+                          placeholder="ex: Texturizado e bagunçado com acabamento natural, ou alinhado e penteado para trás."
                           className="resize-none"
                           {...field}
                         />
                       </FormControl>
                       <FormDescription>
-                        What look are you trying to achieve?
+                        Qual visual você está tentando alcançar?
                       </FormDescription>
                       <FormMessage />
                     </FormItem>
@@ -120,14 +120,14 @@ export default function ProductRecommender() {
                   ) : (
                     <Wand2 className="mr-2 h-4 w-4" />
                   )}
-                  Get Recommendations
+                  Obter Recomendações
                 </Button>
               </form>
             </Form>
           </Card>
 
           <div className="min-h-[300px] lg:mt-0 mt-8">
-            <h3 className="font-headline text-2xl mb-4 text-center lg:text-left">Our AI Recommends:</h3>
+            <h3 className="font-headline text-2xl mb-4 text-center lg:text-left">Nossa IA Recomenda:</h3>
             {isLoading && (
               <div className="flex items-center justify-center h-full">
                 <Loader2 className="w-12 h-12 text-primary animate-spin" />
@@ -154,7 +154,7 @@ export default function ProductRecommender() {
             )}
             {!isLoading && !error && recommendations.length === 0 && (
                 <Card className="bg-card/80 p-6 text-center text-muted-foreground h-full flex items-center justify-center">
-                    <p>Your product recommendations will appear here.</p>
+                    <p>As recomendações de produtos aparecerão aqui.</p>
                 </Card>
             )}
           </div>

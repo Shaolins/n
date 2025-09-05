@@ -15,9 +15,9 @@ export default function Pricing() {
     <section id="pricing" className="py-16 md:py-24 bg-card">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-12">
-          <h2 className="font-headline text-4xl md:text-5xl font-bold">Price List</h2>
+          <h2 className="font-headline text-4xl md:text-5xl font-bold">Tabela de Preços</h2>
           <p className="text-lg text-muted-foreground mt-4 max-w-3xl mx-auto">
-            Fair prices for premium services. Quality grooming is an investment in yourself.
+            Preços justos para serviços premium. Um bom cuidado pessoal é um investimento em você mesmo.
           </p>
         </div>
         <div className="max-w-4xl mx-auto">
@@ -25,15 +25,15 @@ export default function Pricing() {
             <Table>
               <TableHeader>
                 <TableRow className="bg-muted hover:bg-muted">
-                  <TableHead className="w-2/3 font-headline text-lg text-muted-foreground">Service</TableHead>
-                  <TableHead className="text-right font-headline text-lg text-muted-foreground">Price (USD)</TableHead>
+                  <TableHead className="w-2/3 font-headline text-lg text-muted-foreground">Serviço</TableHead>
+                  <TableHead className="text-right font-headline text-lg text-muted-foreground">Preço (R$)</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
                 {pricing.map((item) => (
                   <TableRow key={item.service} className="text-base">
                     <TableCell className="font-medium">{item.service}</TableCell>
-                    <TableCell className="text-right font-semibold">${item.price}</TableCell>
+                    <TableCell className="text-right font-semibold">R$ {item.price}</TableCell>
                   </TableRow>
                 ))}
               </TableBody>
@@ -42,7 +42,7 @@ export default function Pricing() {
         </div>
         <div className="text-center mt-12">
             <BookingModal>
-                <Button size="lg">Book Your Service</Button>
+                <Button size="lg">Agende Seu Serviço</Button>
             </BookingModal>
         </div>
       </div>

@@ -9,11 +9,11 @@ import { Button } from "@/components/ui/button";
 import { BookingModal } from "@/components/booking-modal";
 
 const navLinks = [
-  { href: "#services", label: "Services" },
-  { href: "#stylists", label: "Stylists" },
-  { href: "#gallery", label: "Gallery" },
-  { href: "#pricing", label: "Pricing" },
-  { href: "#contact", label: "Contact" },
+  { href: "#services", label: "Serviços" },
+  { href: "#stylists", label: "Estilistas" },
+  { href: "#gallery", label: "Galeria" },
+  { href: "#pricing", label: "Preços" },
+  { href: "#contact", label: "Contato" },
 ];
 
 export default function Header() {
@@ -54,7 +54,7 @@ export default function Header() {
         </nav>
         <div className="flex items-center gap-4">
           <BookingModal>
-            <Button>Book Now</Button>
+            <Button>Agende Agora</Button>
           </BookingModal>
         </div>
       </div>

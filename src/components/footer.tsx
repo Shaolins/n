@@ -14,37 +14,37 @@ export default function Footer() {
               </span>
             </Link>
             <p className="text-muted-foreground max-w-sm">
-              The premier destination for luxury grooming and timeless style. Experience the art of barbering.
+              O destino principal para cuidados de luxo e estilo atemporal. Experimente a arte da barbearia.
             </p>
           </div>
           <div className="grid gap-4">
-            <h3 className="font-headline text-xl font-semibold">Contact Us</h3>
+            <h3 className="font-headline text-xl font-semibold">Contato</h3>
             <div className="flex items-center gap-3 text-muted-foreground">
               <MapPin className="h-5 w-5 flex-shrink-0" />
-              <span>123 Style Street, Fashion City, 12345</span>
+              <span>Rua do Estilo, 123, Cidade da Moda, 12345-000</span>
             </div>
             <div className="flex items-center gap-3 text-muted-foreground">
               <Phone className="h-5 w-5 flex-shrink-0" />
-              <span>(123) 456-7890</span>
+              <span>(12) 3456-7890</span>
             </div>
             <div className="flex items-center gap-3 text-muted-foreground">
               <Mail className="h-5 w-5 flex-shrink-0" />
-              <span>contact@cutandstyle.com</span>
+              <span>contato@cutandstyle.com</span>
             </div>
           </div>
           <div className="grid gap-4">
-            <h3 className="font-headline text-xl font-semibold">Hours</h3>
+            <h3 className="font-headline text-xl font-semibold">Horários</h3>
             <div className="flex justify-between text-muted-foreground">
-              <span>Tuesday - Friday</span>
-              <span>9:00 AM - 7:00 PM</span>
+              <span>Terça - Sexta</span>
+              <span>09:00 - 19:00</span>
             </div>
             <div className="flex justify-between text-muted-foreground">
-              <span>Saturday</span>
-              <span>10:00 AM - 6:00 PM</span>
+              <span>Sábado</span>
+              <span>10:00 - 18:00</span>
             </div>
             <div className="flex justify-between text-muted-foreground">
-              <span>Sunday - Monday</span>
-              <span>Closed</span>
+              <span>Domingo - Segunda</span>
+              <span>Fechado</span>
             </div>
             <div className="flex gap-4 mt-4">
               <Link href="#" className="text-muted-foreground hover:text-primary"><Instagram /></Link>
@@ -54,7 +54,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="mt-8 border-t pt-6 text-center text-sm text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} Cut & Style Navigator. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Navegador de Corte & Estilo. Todos os direitos reservados.</p>
         </div>
       </div>
     </footer>

@@ -14,9 +14,9 @@ export default function Gallery() {
     <section id="gallery" className="py-16 md:py-24 bg-background">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-12">
-          <h2 className="font-headline text-4xl md:text-5xl font-bold">Style Gallery</h2>
+          <h2 className="font-headline text-4xl md:text-5xl font-bold">Galeria de Estilos</h2>
           <p className="text-lg text-muted-foreground mt-4 max-w-3xl mx-auto">
-            A glimpse into the transformations and styles crafted by our expert barbers.
+            Uma prévia das transformações e estilos criados por nossos barbeiros especialistas.
           </p>
         </div>
         <Carousel

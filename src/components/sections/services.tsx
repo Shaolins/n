@@ -13,9 +13,9 @@ export default function Services() {
     <section id="services" className="py-16 md:py-24 bg-background">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-12">
-          <h2 className="font-headline text-4xl md:text-5xl font-bold">Our Services</h2>
+          <h2 className="font-headline text-4xl md:text-5xl font-bold">Nossos Serviços</h2>
           <p className="text-lg text-muted-foreground mt-4 max-w-3xl mx-auto">
-            From classic cuts to modern styles, we provide a range of services to make you look and feel your best.
+            De cortes clássicos a estilos modernos, oferecemos uma gama de serviços para fazer você parecer e se sentir o seu melhor.
           </p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
