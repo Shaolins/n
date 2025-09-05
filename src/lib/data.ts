@@ -55,6 +55,7 @@ export const galleryImages = [
   { src: "https://picsum.photos/600/800?random=10", alt: "Penteado de transformação do cliente 3", aiHint: "fade haircut" },
   { src: "https://picsum.photos/600/800?random=11", alt: "Penteado de transformação do cliente 4", aiHint: "beard style" },
   { src: "https://picsum.photos/600/800?random=12", alt: "Penteado de transformação do cliente 5", aiHint: "short haircut" },
+  { src: "https://picsum.photos/600/800?random=13", alt: "Penteado de transformação do cliente 6", aiHint: "long hair" },
 ];
 
 export const pricing = [
