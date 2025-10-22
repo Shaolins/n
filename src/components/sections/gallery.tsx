@@ -28,7 +28,7 @@ export default function Gallery() {
         >
           <CarouselContent>
             {galleryImages.map((image, index) => (
-              <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+              <CarouselItem key={image.src} className="md:basis-1/2 lg:basis-1/3">
                 <div className="p-1">
                   <div className="overflow-hidden rounded-lg shadow-lg">
                     <Image
