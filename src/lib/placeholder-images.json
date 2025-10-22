@@ -1,0 +1,64 @@
+{
+  "services": [
+    {
+      "src": "https://picsum.photos/400/300?random=1",
+      "aiHint": "classic haircut"
+    },
+    {
+      "src": "https://picsum.photos/400/300?random=2",
+      "aiHint": "modern fade"
+    },
+    {
+      "src": "https://picsum.photos/400/300?random=3",
+      "aiHint": "beard trim"
+    },
+    {
+      "src": "https://picsum.photos/400/300?random=4",
+      "aiHint": "barber service"
+    }
+  ],
+  "stylists": [
+    {
+      "src": "https://picsum.photos/400/400?random=5",
+      "aiHint": "male portrait"
+    },
+    {
+      "src": "https://picsum.photos/400/400?random=6",
+      "aiHint": "female portrait"
+    },
+    {
+      "src": "https://picsum.photos/400/400?random=7",
+      "aiHint": "man face"
+    }
+  ],
+  "gallery": [
+    {
+      "src": "https://picsum.photos/600/800?random=8",
+      "aiHint": "mens hairstyle"
+    },
+    {
+      "src": "https://picsum.photos/600/800?random=9",
+      "aiHint": "cool hairstyle"
+    },
+    {
+      "src": "https://picsum.photos/600/800?random=10",
+      "aiHint": "fade haircut"
+    },
+    {
+      "src": "https://picsum.photos/600/800?random=11",
+      "aiHint": "beard style"
+    },
+    {
+      "src": "https://picsum.photos/600/800?random=12",
+      "aiHint": "short haircut"
+    },
+    {
+      "src": "https://picsum.photos/600/800?random=13",
+      "aiHint": "long hair"
+    },
+    {
+      "src": "https://picsum.photos/600/800?random=14",
+      "aiHint": "stylish haircut"
+    }
+  ]
+}
