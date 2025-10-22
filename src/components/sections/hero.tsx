@@ -2,14 +2,15 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { BookingModal } from "@/components/booking-modal";
 import { ArrowDown } from "lucide-react";
+import placeholderImages from "@/lib/placeholder-images.json";
 
 export default function Hero() {
   return (
     <section id="hero" className="relative h-screen w-full">
       <Image
-        src="https://picsum.photos/seed/hero/1920/1080"
+        src={placeholderImages.hero.src}
         alt="Interior de uma barbearia moderna"
-        data-ai-hint="barbershop interior"
+        data-ai-hint={placeholderImages.hero.aiHint}
         fill
         className="object-cover"
         priority
