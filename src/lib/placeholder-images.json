@@ -1,63 +1,63 @@
 {
   "services": [
     {
-      "src": "https://picsum.photos/seed/svc1/400/300",
+      "src": "https://picsum.photos/seed/classiccut/400/300",
       "aiHint": "classic haircut"
     },
     {
-      "src": "https://picsum.photos/seed/svc2/400/300",
+      "src": "https://picsum.photos/seed/newsvc2/400/300",
       "aiHint": "modern fade"
     },
     {
-      "src": "https://picsum.photos/seed/svc3/400/300",
+      "src": "https://picsum.photos/seed/newsvc3/400/300",
       "aiHint": "beard trim"
     },
     {
-      "src": "https://picsum.photos/seed/svc4/400/300",
+      "src": "https://picsum.photos/seed/newsvc4/400/300",
       "aiHint": "barber service"
     }
   ],
   "stylists": [
     {
-      "src": "https://picsum.photos/seed/sty1/400/400",
+      "src": "https://picsum.photos/seed/newsty1/400/400",
       "aiHint": "male portrait"
     },
     {
-      "src": "https://picsum.photos/seed/sty2/400/400",
+      "src": "https://picsum.photos/seed/newsty2/400/400",
       "aiHint": "female portrait"
     },
     {
-      "src": "https://picsum.photos/seed/sty3/400/400",
+      "src": "https://picsum.photos/seed/newsty3/400/400",
       "aiHint": "man face"
     }
   ],
   "gallery": [
     {
-      "src": "https://picsum.photos/seed/gal1/600/800",
+      "src": "https://picsum.photos/seed/newgal1/600/800",
       "aiHint": "mens hairstyle"
     },
     {
-      "src": "https://picsum.photos/seed/gal2/600/800",
+      "src": "https://picsum.photos/seed/newgal2/600/800",
       "aiHint": "cool hairstyle"
     },
     {
-      "src": "https://picsum.photos/seed/gal3/600/800",
+      "src": "https://picsum.photos/seed/newgal3/600/800",
       "aiHint": "fade haircut"
     },
     {
-      "src": "https://picsum.photos/seed/gal4/600/800",
+      "src": "https://picsum.photos/seed/newgal4/600/800",
       "aiHint": "beard style"
     },
     {
-      "src": "https://picsum.photos/seed/gal5/600/800",
+      "src": "https://picsum.photos/seed/newgal5/600/800",
       "aiHint": "short haircut"
     },
     {
-      "src": "https://picsum.photos/seed/gal6/600/800",
+      "src": "https://picsum.photos/seed/newgal6/600/800",
       "aiHint": "long hair"
     },
     {
-      "src": "https://picsum.photos/seed/gal7/600/800",
+      "src": "https://picsum.photos/seed/newgal7/600/800",
       "aiHint": "stylish haircut"
     }
   ]
