@@ -7,7 +7,7 @@ export default function Hero() {
   return (
     <section id="hero" className="relative h-screen w-full">
       <Image
-        src="https://picsum.photos/1920/1080?random=0"
+        src="https://picsum.photos/seed/hero/1920/1080"
         alt="Interior de uma barbearia moderna"
         data-ai-hint="barbershop interior"
         fill
