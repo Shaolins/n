@@ -1,6 +1,6 @@
 {
   "hero": {
-    "src": "https://picsum.photos/seed/hero/1920/1080",
+    "src": "/images/Tigre.jpg",
     "aiHint": "stylish barbershop"
   },
   "services": [

@@ -26,6 +26,7 @@ export default function Services() {
                   src={service.image}
                   alt={service.name}
                   fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   style={{ objectFit: 'cover' }}
                   data-ai-hint={service.aiHint}
                   className="transition-transform duration-300 group-hover:scale-105"
