@@ -1,6 +1,6 @@
 {
   "hero": {
-    "src": "/images/lena-denk-vO-RghTzv6g-unsplash.jpg",
+    "src": "https://picsum.photos/seed/hero/1920/1080",
     "aiHint": "stylish barbershop"
   },
   "services": [
@@ -9,11 +9,11 @@
       "aiHint": "classic haircut"
     },
     {
-      "src": "/images/meu-fade-moderno.jpg",
+      "src": "https://picsum.photos/seed/service2/600/400",
       "aiHint": "modern fade"
     },
     {
-      "src": "/images/beard-trim.jpg",
+      "src": "https://picsum.photos/seed/service3/600/400",
       "aiHint": "beard trim"
     },
     {
