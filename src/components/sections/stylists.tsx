@@ -1,4 +1,3 @@
-import Image from "next/image";
 import {
   Card,
   CardContent,
@@ -23,14 +22,9 @@ export default function Stylists() {
           {stylists.map((stylist) => (
             <Card key={stylist.name} className="text-center flex flex-col items-center p-6 border-2 border-transparent hover:border-primary transition-all duration-300 hover:shadow-xl">
               <CardHeader className="p-0 items-center">
-                <Image
-                  src={stylist.image}
-                  alt={stylist.name}
-                  width={150}
-                  height={150}
-                  data-ai-hint={stylist.aiHint}
-                  className="rounded-full object-cover border-4 border-accent"
-                />
+                <div className="w-36 h-36 rounded-full bg-muted flex items-center justify-center mb-4">
+                  <span className="text-muted-foreground text-sm">Sem Imagem</span>
+                </div>
                 <CardTitle className="font-headline text-2xl mt-4">{stylist.name}</CardTitle>
                 <Badge variant="secondary" className="mt-2 bg-accent/20 text-accent-foreground">{stylist.specialty}</Badge>
               </CardHeader>

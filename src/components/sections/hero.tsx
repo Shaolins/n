@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { BookingModal } from "@/components/booking-modal";
 import { ArrowDown } from "lucide-react";
@@ -6,14 +5,7 @@ import { ArrowDown } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section id="hero" className="relative h-screen w-full">
-      <Image
-      src="/public/images/lena-denk-vO-RghTzv6g-unsplash.jpg"
-      alt="Interior de uma barbearia moderna"
-      fill
-      className="object-cover"
-      priority
-/>
+    <section id="hero" className="relative h-screen w-full bg-neutral-900">
       <div className="absolute inset-0 bg-black/60" />
       <div className="relative z-10 flex h-full flex-col items-center justify-center text-center text-white">
         <h1 className="font-headline text-6xl md:text-8xl lg:text-9xl drop-shadow-lg">
