@@ -1,11 +1,11 @@
 {
   "hero": {
-    "src": "/images/Tigre.jpg",
+    "src": "/images/lena-denk-vO-RghTzv6g-unsplash.jpg",
     "aiHint": "stylish barbershop"
   },
   "services": [
     {
-      "src": "/images/Tigre.jpg",
+      "src": "https://picsum.photos/seed/service1/600/400",
       "aiHint": "classic haircut"
     },
     {
