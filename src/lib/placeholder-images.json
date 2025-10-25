@@ -1,6 +1,6 @@
 {
   "hero": {
-    "src": "/images/Tigre.jpg",
+    "src": "https://picsum.photos/seed/hero/1920/1080",
     "aiHint": "stylish barbershop"
   },
   "services": [
@@ -17,51 +17,51 @@
       "aiHint": "beard trim"
     },
     {
-      "src": "/images/full-service.jpg",
+      "src": "https://picsum.photos/seed/service4/600/400",
       "aiHint": "barber service"
     }
   ],
   "stylists": [
     {
-      "src": "/images/stylist-alex.jpg",
+      "src": "https://picsum.photos/seed/stylist1/400/400",
       "aiHint": "male portrait"
     },
     {
-      "src": "/images/stylist-samantha.jpg",
+      "src": "https://picsum.photos/seed/stylist2/400/400",
       "aiHint": "female portrait"
     },
     {
-      "src": "/images/stylist-marco.jpg",
+      "src": "https://picsum.photos/seed/stylist3/400/400",
       "aiHint": "man face"
     }
   ],
   "gallery": [
     {
-      "src": "/images/gallery-1.jpg",
+      "src": "https://picsum.photos/seed/gallery1/600/800",
       "aiHint": "mens hairstyle"
     },
     {
-      "src": "/images/gallery-2.jpg",
+      "src": "https://picsum.photos/seed/gallery2/600/800",
       "aiHint": "cool hairstyle"
     },
     {
-      "src": "/images/gallery-3.jpg",
+      "src": "https://picsum.photos/seed/gallery3/600/800",
       "aiHint": "fade haircut"
     },
     {
-      "src": "/images/gallery-4.jpg",
+      "src": "https://picsum.photos/seed/gallery4/600/800",
       "aiHint": "beard style"
     },
     {
-      "src": "/images/gallery-5.jpg",
+      "src": "https://picsum.photos/seed/gallery5/600/800",
       "aiHint": "short haircut"
     },
     {
-      "src": "/images/gallery-6.jpg",
+      "src": "https://picsum.photos/seed/gallery6/600/800",
       "aiHint": "long hair"
     },
     {
-      "src": "/images/gallery-7.jpg",
+      "src": "https://picsum.photos/seed/gallery7/600/800",
       "aiHint": "stylish haircut"
     }
   ]
