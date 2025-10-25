@@ -19,7 +19,7 @@ export default function Services() {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {services.map((service) => (
-            <Card key={service.name} className="overflow-hidden group transform transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl">
+            <Card key={service.name} className="overflow-hidden group transform transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl flex flex-col">
               <CardHeader className="p-6">
                 <CardTitle className="font-headline text-xl mb-2">{service.name}</CardTitle>
               </CardHeader>
