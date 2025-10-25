@@ -1,11 +1,11 @@
 {
   "hero": {
-    "src": "/images/meu-fade-moderno.jpg",
+    "src": "/images/Tigre.jpg",
     "aiHint": "stylish barbershop"
   },
   "services": [
     {
-      "src": "/images/meu-fade-moderno.jpg",
+      "src": "/images/classic-haircut.jpg",
       "aiHint": "classic haircut"
     },
     {
@@ -13,55 +13,55 @@
       "aiHint": "modern fade"
     },
     {
-      "src": "/images/meu-fade-moderno.jpg",
+      "src": "/images/beard-trim.jpg",
       "aiHint": "beard trim"
     },
     {
-      "src": "/images/meu-fade-moderno.jpg",
+      "src": "/images/full-service.jpg",
       "aiHint": "barber service"
     }
   ],
   "stylists": [
     {
-      "src": "/images/meu-fade-moderno.jpg",
+      "src": "/images/stylist-alex.jpg",
       "aiHint": "male portrait"
     },
     {
-      "src": "/images/meu-fade-moderno.jpg",
+      "src": "/images/stylist-samantha.jpg",
       "aiHint": "female portrait"
     },
     {
-      "src": "/images/meu-fade-moderno.jpg",
+      "src": "/images/stylist-marco.jpg",
       "aiHint": "man face"
     }
   ],
   "gallery": [
     {
-      "src": "/images/meu-fade-moderno.jpg",
+      "src": "/images/gallery-1.jpg",
       "aiHint": "mens hairstyle"
     },
     {
-      "src": "/images/meu-fade-moderno.jpg",
+      "src": "/images/gallery-2.jpg",
       "aiHint": "cool hairstyle"
     },
     {
-      "src": "/images/meu-fade-moderno.jpg",
+      "src": "/images/gallery-3.jpg",
       "aiHint": "fade haircut"
     },
     {
-      "src": "/images/meu-fade-moderno.jpg",
+      "src": "/images/gallery-4.jpg",
       "aiHint": "beard style"
     },
     {
-      "src": "/images/meu-fade-moderno.jpg",
+      "src": "/images/gallery-5.jpg",
       "aiHint": "short haircut"
     },
     {
-      "src": "/images/meu-fade-moderno.jpg",
+      "src": "/images/gallery-6.jpg",
       "aiHint": "long hair"
     },
     {
-      "src": "/images/meu-fade-moderno.jpg",
+      "src": "/images/gallery-7.jpg",
       "aiHint": "stylish haircut"
     }
   ]
