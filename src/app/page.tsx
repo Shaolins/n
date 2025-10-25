@@ -2,11 +2,11 @@ import Header from "@/components/header";
 import Hero from "@/components/sections/hero";
 import Services from "@/components/sections/services";
 import Stylists from "@/components/sections/stylists";
+import Gallery from "@/components/sections/gallery";
 import Pricing from "@/components/sections/pricing";
 import ProductRecommender from "@/components/sections/product-recommender";
 import Footer from "@/components/footer";
 import { ImageUploader } from "@/components/image-uploader";
-import { Separator } from "@/components/ui/separator";
 
 export default function Home() {
   return (
@@ -16,6 +16,7 @@ export default function Home() {
         <Hero />
         <Services />
         <Stylists />
+        <Gallery />
         <Pricing />
         <ProductRecommender />
         <div className="py-16 md:py-24 bg-background">

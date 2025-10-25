@@ -1,0 +1,83 @@
+{
+  "heroImage": {
+    "src": "https://picsum.photos/seed/hero/1920/1080",
+    "alt": "Interior de uma barbearia moderna",
+    "aiHint": "stylish barbershop"
+  },
+  "services": [
+    {
+      "src": "https://picsum.photos/seed/service1/600/400",
+      "alt": "Corte de Cabelo Clássico",
+      "aiHint": "classic haircut"
+    },
+    {
+      "src": "https://picsum.photos/seed/service2/600/400",
+      "alt": "Fade Moderno",
+      "aiHint": "modern fade"
+    },
+    {
+      "src": "https://picsum.photos/seed/service3/600/400",
+      "alt": "Aparo de Barba",
+      "aiHint": "beard trim"
+    },
+    {
+      "src": "https://picsum.photos/seed/service4/600/400",
+      "alt": "Serviço Completo de Barbearia",
+      "aiHint": "barber service"
+    }
+  ],
+  "stylists": [
+    {
+      "src": "https://picsum.photos/seed/stylist1/400/400",
+      "alt": "Retrato de Alex Johnson",
+      "aiHint": "male portrait"
+    },
+    {
+      "src": "https://picsum.photos/seed/stylist2/400/400",
+      "alt": "Retrato de Samantha Carter",
+      "aiHint": "female portrait"
+    },
+    {
+      "src": "https://picsum.photos/seed/stylist3/400/400",
+      "alt": "Retrato de Marco Rossi",
+      "aiHint": "man face"
+    }
+  ],
+  "galleryImages": [
+    {
+      "src": "https://picsum.photos/seed/gallery1/600/800",
+      "alt": "Penteado de transformação do cliente 1",
+      "aiHint": "mens hairstyle"
+    },
+    {
+      "src": "https://picsum.photos/seed/gallery2/600/800",
+      "alt": "Penteado de transformação do cliente 2",
+      "aiHint": "cool hairstyle"
+    },
+    {
+      "src": "https://picsum.photos/seed/gallery3/600/800",
+      "alt": "Penteado de transformação do cliente 3",
+      "aiHint": "fade haircut"
+    },
+    {
+      "src": "https://picsum.photos/seed/gallery4/600/800",
+      "alt": "Penteado de transformação do cliente 4",
+      "aiHint": "beard style"
+    },
+    {
+      "src": "https://picsum.photos/seed/gallery5/600/800",
+      "alt": "Penteado de transformação do cliente 5",
+      "aiHint": "short haircut"
+    },
+    {
+      "src": "https://picsum.photos/seed/gallery6/600/800",
+      "alt": "Penteado de transformação do cliente 6",
+      "aiHint": "long hair"
+    },
+    {
+      "src": "https://picsum.photos/seed/gallery7/600/800",
+      "alt": "Penteado de transformação do cliente 7",
+      "aiHint": "stylish haircut"
+    }
+  ]
+}

@@ -6,10 +6,11 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import imageData from "@/lib/placeholder-images.json";
 
-import { galleryImages } from "@/lib/data";
 
 export default function Gallery() {
+  const { galleryImages } = imageData;
   return (
     <section id="gallery" className="py-16 md:py-24 bg-background">
       <div className="container mx-auto px-4 md:px-6">
@@ -28,7 +29,7 @@ export default function Gallery() {
         >
           <CarouselContent>
             {galleryImages.map((image, index) => (
-              <CarouselItem key={image.src} className="md:basis-1/2 lg:basis-1/3">
+              <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
                 <div className="p-1">
                   <div className="overflow-hidden rounded-lg shadow-lg">
                     <Image

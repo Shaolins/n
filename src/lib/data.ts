@@ -35,7 +35,7 @@ export const stylists = [
   },
 ];
 
-export const galleryImages = [];
+export const galleryImages = []; // This is now managed by placeholder-images.json
 
 export const pricing = [
     { service: "Corte de Cabelo Clássico", price: "50" },

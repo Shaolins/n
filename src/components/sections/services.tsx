@@ -1,3 +1,4 @@
+import Image from "next/image";
 import {
   Card,
   CardContent,
@@ -6,8 +7,11 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { services } from "@/lib/data";
+import imageData from "@/lib/placeholder-images.json";
 
 export default function Services() {
+  const serviceImages = imageData.services;
+
   return (
     <section id="services" className="py-16 md:py-24 bg-background">
       <div className="container mx-auto px-4 md:px-6">
@@ -18,16 +22,29 @@ export default function Services() {
           </p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {services.map((service) => (
-            <Card key={service.name} className="overflow-hidden group transform transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl flex flex-col">
-              <CardHeader className="p-6">
-                <CardTitle className="font-headline text-xl mb-2">{service.name}</CardTitle>
-              </CardHeader>
-              <CardContent className="p-6 pt-0">
-                <CardDescription>{service.description}</CardDescription>
-              </CardContent>
-            </Card>
-          ))}
+          {services.map((service, index) => {
+            const image = serviceImages[index];
+            return (
+              <Card key={service.name} className="overflow-hidden group transform transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl flex flex-col">
+                <CardHeader className="p-0 relative w-full h-48">
+                  {image && (
+                    <Image
+                      src={image.src}
+                      alt={image.alt}
+                      fill
+                      style={{ objectFit: "cover" }}
+                      data-ai-hint={image.aiHint}
+                      className="transition-transform duration-300 group-hover:scale-105"
+                    />
+                  )}
+                </CardHeader>
+                <CardContent className="p-6 flex-grow flex flex-col">
+                  <CardTitle className="font-headline text-xl mb-2">{service.name}</CardTitle>
+                  <CardDescription className="flex-grow">{service.description}</CardDescription>
+                </CardContent>
+              </Card>
+            );
+          })}
         </div>
       </div>
     </section>

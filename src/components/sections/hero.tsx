@@ -1,11 +1,21 @@
 import { Button } from "@/components/ui/button";
 import { BookingModal } from "@/components/booking-modal";
 import { ArrowDown } from "lucide-react";
-
+import Image from "next/image";
+import imageData from "@/lib/placeholder-images.json";
 
 export default function Hero() {
+  const { heroImage } = imageData;
   return (
-    <section id="hero" className="relative h-screen w-full bg-neutral-900">
+    <section id="hero" className="relative h-screen w-full">
+      <Image
+        src={heroImage.src}
+        alt={heroImage.alt}
+        data-ai-hint={heroImage.aiHint}
+        fill
+        className="object-cover"
+        priority
+      />
       <div className="absolute inset-0 bg-black/60" />
       <div className="relative z-10 flex h-full flex-col items-center justify-center text-center text-white">
         <h1 className="font-headline text-6xl md:text-8xl lg:text-9xl drop-shadow-lg">
