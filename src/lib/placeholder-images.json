@@ -1,8 +1,8 @@
 {
   "heroImage": {
-    "src": "/images/Gabriel.jpg",
-    "alt": "Interior de uma barbearia estilosa com um cliente",
-    "aiHint": "stylish barbershop"
+    "src": "/images/stylish-barbershop-interior.jpg",
+    "alt": "Interior de uma barbearia moderna e estilosa, com cadeiras de couro e iluminação ambiente.",
+    "aiHint": "stylish barbershop interior"
   },
   "services": [
     {
