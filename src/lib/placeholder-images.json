@@ -6,7 +6,7 @@
   },
   "services": [
     {
-      "src": "https://i.imgur.com/r0QLwtJ.png",
+      "src": "https://picsum.photos/seed/classic-cut/600/400",
       "alt": "Homem com um corte de cabelo social clássico e elegante.",
       "aiHint": "classic haircut"
     },
