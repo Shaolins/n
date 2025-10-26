@@ -1,7 +1,7 @@
 {
   "heroImage": {
-    "src": "https://picsum.photos/seed/hero/1920/1080",
-    "alt": "Interior de uma barbearia moderna",
+    "src": "/images/Gabriel.jpg",
+    "alt": "Interior de uma barbearia estilosa com um cliente",
     "aiHint": "stylish barbershop"
   },
   "services": [
