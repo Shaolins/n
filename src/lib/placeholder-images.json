@@ -6,7 +6,7 @@
   },
   "services": [
     {
-      "src": "https://picsum.photos/seed/service1/600/400",
+      "src": "/images/corte-social.jpg",
       "alt": "Corte de Cabelo Clássico",
       "aiHint": "classic haircut"
     },
