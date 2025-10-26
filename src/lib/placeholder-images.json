@@ -7,22 +7,22 @@
   "services": [
     {
       "src": "/images/corte-social.jpg",
-      "alt": "Corte de Cabelo Clássico",
+      "alt": "Homem com um corte de cabelo social clássico e elegante.",
       "aiHint": "classic haircut"
     },
     {
-      "src": "https://picsum.photos/seed/service2/600/400",
-      "alt": "Fade Moderno",
+      "src": "https://picsum.photos/seed/modern-fade/600/400",
+      "alt": "Close-up de um corte de cabelo com um degradê (fade) moderno e nítido.",
       "aiHint": "modern fade"
     },
     {
-      "src": "https://picsum.photos/seed/service3/600/400",
-      "alt": "Aparo de Barba",
+      "src": "https://picsum.photos/seed/beard-grooming/600/400",
+      "alt": "Homem com uma barba bem aparada e modelada.",
       "aiHint": "beard trim"
     },
     {
-      "src": "https://picsum.photos/seed/service4/600/400",
-      "alt": "Serviço Completo de Barbearia",
+      "src": "https://picsum.photos/seed/barber-experience/600/400",
+      "alt": "Cliente recebendo o serviço completo de barbearia, relaxando na cadeira.",
       "aiHint": "barber service"
     }
   ],
