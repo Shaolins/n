@@ -11,7 +11,7 @@
       "aiHint": "classic haircut"
     },
     {
-      "src": "https://i.imgur.com/DU1rW9U.png",
+      "src": "https://picsum.photos/seed/modern-fade/600/400",
       "alt": "Close-up de um corte de cabelo com um degradê (fade) moderno e nítido.",
       "aiHint": "modern fade"
     },
@@ -21,7 +21,7 @@
       "aiHint": "beard trim"
     },
     {
-      "src": "https://picsum.photos/seed/barber-experience/600/400",
+      "src": "https://i.imgur.com/DU1rW9U.png",
       "alt": "Cliente recebendo o serviço completo de barbearia, relaxando na cadeira.",
       "aiHint": "barber service"
     }
@@ -45,7 +45,7 @@
   ],
   "galleryImages": [
     {
-      "src": "https://picsum.photos/seed/gallery1/600/800",
+      "src": "https://i.imgur.com/lL27mR7.png",
       "alt": "Penteado de transformação do cliente 1",
       "aiHint": "mens hairstyle"
     },
