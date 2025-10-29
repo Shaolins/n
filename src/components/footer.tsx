@@ -47,9 +47,9 @@ export default function Footer() {
               <span>Fechado</span>
             </div>
             <div className="flex gap-4 mt-4">
-              <Link href="#" className="text-muted-foreground hover:text-primary"><Instagram /></Link>
-              <Link href="#" className="text-muted-foreground hover:text-primary"><Facebook /></Link>
-              <Link href="#" className="text-muted-foreground hover:text-primary"><Twitter /></Link>
+              <Link href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary"><Instagram /></Link>
+              <Link href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary"><Facebook /></Link>
+              <Link href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary"><Twitter /></Link>
             </div>
           </div>
         </div>
