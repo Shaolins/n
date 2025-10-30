@@ -21,7 +21,7 @@ export default function Footer() {
             <h3 className="font-headline text-xl font-semibold">Contato</h3>
             <div className="flex items-center gap-3 text-muted-foreground">
               <MapPin className="h-5 w-5 flex-shrink-0" />
-              <span>Rua do Estilo, 123, Cidade da Moda, 12345-000</span>
+              <span>Rua Gen. Porfírio da Paz, 778, Vila Bancaria, São Paulo - SP, 03918-040</span>
             </div>
             <div className="flex items-center gap-3 text-muted-foreground">
               <Phone className="h-5 w-5 flex-shrink-0" />
