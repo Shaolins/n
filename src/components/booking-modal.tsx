@@ -83,7 +83,7 @@ export function BookingModal({ children }: { children: React.ReactNode }) {
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>{children}</DialogTrigger>
-      <DialogContent className="sm:max-w-[425px] bg-background">
+      <DialogContent className="sm:max-w-[380px] bg-background">
         <DialogHeader>
           <DialogTitle className="font-headline text-2xl">Agende um Horário</DialogTitle>
           <DialogDescription>
