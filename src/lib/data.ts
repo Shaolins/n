@@ -57,6 +57,5 @@ export const exclusiveServices = [
 ];
 
 const allPricingServices = pricing.map(p => p.service);
-const allExclusiveServices = exclusiveServices.map(s => s.service);
 
-export const allServicesForBooking = [...new Set([...allPricingServices, ...allExclusiveServices])].map(serviceName => ({ name: serviceName }));
+export const allServicesForBooking = [...new Set(allPricingServices)].map(serviceName => ({ name: serviceName }));
