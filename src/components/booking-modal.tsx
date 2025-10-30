@@ -1,12 +1,12 @@
 
 "use client";
 
-import { useState } from "react";
-import { useForm } from "react-hook-form";
+import { useState, useMemo } from "react";
+import { useForm, useWatch } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { CalendarIcon, Clock, User, Scissors, Sparkles } from "lucide-react";
-import { format } from "date-fns";
+import { format, getDay, set } from "date-fns";
 import { ptBR } from "date-fns/locale";
 
 import { Button } from "@/components/ui/button";
@@ -57,10 +57,38 @@ const bookingSchema = z.object({
   path: ["service"],
 });
 
-const availableTimes = [
-  "09:00", "10:00", "11:00", "12:00",
-  "13:00", "14:00", "15:00", "16:00", "17:00", "18:00"
-];
+
+const generateAvailableTimes = (date: Date | undefined): string[] => {
+    if (!date) return [];
+
+    const now = new Date();
+    const dayOfWeek = getDay(date); // 0 = Domingo, 1 = Segunda, ..., 6 = Sábado
+    let startHour = 7;
+    let endHour = 19; // O último horário de agendamento é 1h antes de fechar
+
+    if (dayOfWeek === 0) { // Domingo
+        return [];
+    } else if (dayOfWeek === 6) { // Sábado
+        startHour = 7;
+        endHour = 15;
+    }
+
+    const times: string[] = [];
+    for (let hour = startHour; hour <= endHour; hour++) {
+        const timeSlot = set(date, { hours: hour, minutes: 0, seconds: 0, milliseconds: 0 });
+
+        // Se a data for hoje, só mostrar horários futuros
+        if (format(date, 'yyyy-MM-dd') === format(now, 'yyyy-MM-dd')) {
+            if (timeSlot > now) {
+                times.push(format(timeSlot, "HH:mm"));
+            }
+        } else {
+            times.push(format(timeSlot, "HH:mm"));
+        }
+    }
+    return times;
+};
+
 
 export function BookingModal({ children }: { children: React.ReactNode }) {
   const [open, setOpen] = useState(false);
@@ -70,8 +98,17 @@ export function BookingModal({ children }: { children: React.ReactNode }) {
     resolver: zodResolver(bookingSchema),
     defaultValues: {
       name: "",
+      service: "",
+      exclusiveService: ""
     },
   });
+
+  const selectedDate = useWatch({
+    control: form.control,
+    name: "date",
+  });
+
+  const availableTimes = useMemo(() => generateAvailableTimes(selectedDate), [selectedDate]);
 
   function onSubmit(data: z.infer<typeof bookingSchema>) {
     console.log(data);
@@ -94,148 +131,164 @@ export function BookingModal({ children }: { children: React.ReactNode }) {
             Escolha seu serviço, estilista e horário. Estamos ansiosos para te ver.
           </DialogDescription>
         </DialogHeader>
-        <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
-            <FormField
-              control={form.control}
-              name="name"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Nome Completo</FormLabel>
-                  <FormControl>
-                    <Input placeholder="João da Silva" {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name="service"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Serviço</FormLabel>
-                  <Select onValueChange={field.onChange} defaultValue={field.value}>
+        <div className="max-h-[calc(90vh-150px)] overflow-y-auto pr-2">
+            <Form {...form}>
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+                <FormField
+                control={form.control}
+                name="name"
+                render={({ field }) => (
+                    <FormItem>
+                    <FormLabel>Nome Completo</FormLabel>
                     <FormControl>
-                      <SelectTrigger><Scissors className="mr-2 h-4 w-4" /> <SelectValue placeholder="Selecione um serviço" /></SelectTrigger>
+                        <Input placeholder="João da Silva" {...field} />
                     </FormControl>
-                    <SelectContent>
-                      {allServicesForBooking.map((service) => (
-                        <SelectItem key={service.name} value={service.name}>{service.name}</SelectItem>
-                      ))}
-                    </SelectContent>
-                  </Select>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name="exclusiveService"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Serviços Exclusivos</FormLabel>
-                  <Select onValueChange={field.onChange} defaultValue={field.value}>
-                    <FormControl>
-                      <SelectTrigger><Sparkles className="mr-2 h-4 w-4" /> <SelectValue placeholder="Selecione um serviço exclusivo" /></SelectTrigger>
-                    </FormControl>
-                    <SelectContent>
-                      {exclusiveServicesForBooking.map((service) => (
-                        <SelectItem key={service.name} value={service.name}>{service.name}</SelectItem>
-                      ))}
-                    </SelectContent>
-                  </Select>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name="stylist"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Estilista</FormLabel>
-                  <Select onValueChange={field.onChange} defaultValue={field.value}>
-                    <FormControl>
-                      <SelectTrigger><User className="mr-2 h-4 w-4" /><SelectValue placeholder="Selecione um estilista" /></SelectTrigger>
-                    </FormControl>
-                    <SelectContent>
-                      {stylists.map((stylist) => (
-                        <SelectItem key={stylist.name} value={stylist.name}>{stylist.name}</SelectItem>
-                      ))}
-                    </SelectContent>
-                  </Select>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name="date"
-              render={({ field }) => (
-                <FormItem className="flex flex-col">
-                  <FormLabel>Data</FormLabel>
-                  <Popover>
-                    <PopoverTrigger asChild>
-                      <FormControl>
-                        <Button
-                          variant={"outline"}
-                          className={cn(
-                            "w-full pl-3 text-left font-normal",
-                            !field.value && "text-muted-foreground"
-                          )}
-                        >
-                          {field.value ? (
-                            format(field.value, "PPP", { locale: ptBR })
-                          ) : (
-                            <span>Escolha uma data</span>
-                          )}
-                          <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
-                        </Button>
-                      </FormControl>
-                    </PopoverTrigger>
-                    <PopoverContent className="w-auto p-0" align="start">
-                      <Calendar
-                        locale={ptBR}
-                        mode="single"
-                        selected={field.value}
-                        onSelect={field.onChange}
-                        disabled={(date) =>
-                          date < new Date(new Date().setHours(0,0,0,0))
-                        }
-                        initialFocus
-                      />
-                    </PopoverContent>
-                  </Popover>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-             <FormField
-              control={form.control}
-              name="time"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Horário</FormLabel>
-                  <Select onValueChange={field.onChange} defaultValue={field.value}>
-                    <FormControl>
-                      <SelectTrigger><Clock className="mr-2 h-4 w-4" /><SelectValue placeholder="Selecione um horário" /></SelectTrigger>
-                    </FormControl>
-                    <SelectContent>
-                       {availableTimes.map((time) => (
-                        <SelectItem key={time} value={time}>{time}</SelectItem>
-                      ))}
-                    </SelectContent>
-                  </Select>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <DialogFooter>
-              <Button type="submit" className="w-full">Confirmar Agendamento</Button>
-            </DialogFooter>
-          </form>
-        </Form>
+                    <FormMessage />
+                    </FormItem>
+                )}
+                />
+                 <FormField
+                  control={form.control}
+                  name="service"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Serviços</FormLabel>
+                      <Select onValueChange={(value) => {
+                          field.onChange(value);
+                          form.setValue('exclusiveService', '');
+                      }} value={field.value}>
+                        <FormControl>
+                          <SelectTrigger><Scissors className="mr-2 h-4 w-4" /> <SelectValue placeholder="Selecione um serviço" /></SelectTrigger>
+                        </FormControl>
+                        <SelectContent>
+                          {allServicesForBooking.map((service) => (
+                            <SelectItem key={service.name} value={service.name}>{service.name}</SelectItem>
+                          ))}
+                        </SelectContent>
+                      </Select>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={form.control}
+                  name="exclusiveService"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Serviços Exclusivos</FormLabel>
+                      <Select onValueChange={(value) => {
+                          field.onChange(value);
+                          form.setValue('service', '');
+                      }} value={field.value}>
+                        <FormControl>
+                          <SelectTrigger><Sparkles className="mr-2 h-4 w-4" /> <SelectValue placeholder="Selecione um serviço exclusivo" /></SelectTrigger>
+                        </FormControl>
+                        <SelectContent>
+                          {exclusiveServicesForBooking.map((service) => (
+                            <SelectItem key={service.name} value={service.name}>{service.name}</SelectItem>
+                          ))}
+                        </SelectContent>
+                      </Select>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                control={form.control}
+                name="stylist"
+                render={({ field }) => (
+                    <FormItem>
+                    <FormLabel>Estilista</FormLabel>
+                    <Select onValueChange={field.onChange} defaultValue={field.value}>
+                        <FormControl>
+                        <SelectTrigger><User className="mr-2 h-4 w-4" /><SelectValue placeholder="Selecione um estilista" /></SelectTrigger>
+                        </FormControl>
+                        <SelectContent>
+                        {stylists.map((stylist) => (
+                            <SelectItem key={stylist.name} value={stylist.name}>{stylist.name}</SelectItem>
+                        ))}
+                        </SelectContent>
+                    </Select>
+                    <FormMessage />
+                    </FormItem>
+                )}
+                />
+                <FormField
+                control={form.control}
+                name="date"
+                render={({ field }) => (
+                    <FormItem className="flex flex-col">
+                    <FormLabel>Data</FormLabel>
+                    <Popover>
+                        <PopoverTrigger asChild>
+                        <FormControl>
+                            <Button
+                            variant={"outline"}
+                            className={cn(
+                                "w-full pl-3 text-left font-normal",
+                                !field.value && "text-muted-foreground"
+                            )}
+                            >
+                            {field.value ? (
+                                format(field.value, "PPP", { locale: ptBR })
+                            ) : (
+                                <span>Escolha uma data</span>
+                            )}
+                            <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
+                            </Button>
+                        </FormControl>
+                        </PopoverTrigger>
+                        <PopoverContent className="w-auto p-0" align="start">
+                        <Calendar
+                            locale={ptBR}
+                            mode="single"
+                            selected={field.value}
+                            onSelect={(date) => {
+                                field.onChange(date);
+                                form.resetField('time');
+                            }}
+                            disabled={(date) =>
+                                date < new Date(new Date().setHours(0,0,0,0)) ||
+                                getDay(date) === 0 // Desabilita domingos
+                            }
+                            initialFocus
+                        />
+                        </PopoverContent>
+                    </Popover>
+                    <FormMessage />
+                    </FormItem>
+                )}
+                />
+                <FormField
+                control={form.control}
+                name="time"
+                render={({ field }) => (
+                    <FormItem>
+                    <FormLabel>Horário</FormLabel>
+                    <Select onValueChange={field.onChange} value={field.value} disabled={!selectedDate || availableTimes.length === 0}>
+                        <FormControl>
+                        <SelectTrigger><Clock className="mr-2 h-4 w-4" /><SelectValue placeholder={!selectedDate ? "Selecione uma data primeiro" : "Selecione um horário"} /></SelectTrigger>
+                        </FormControl>
+                        <SelectContent>
+                        {availableTimes.length > 0 ? (
+                            availableTimes.map((time) => (
+                                <SelectItem key={time} value={time}>{time}</SelectItem>
+                            ))
+                        ) : (
+                            <SelectItem value="no-time" disabled>Nenhum horário disponível</SelectItem>
+                        )}
+                        </SelectContent>
+                    </Select>
+                    <FormMessage />
+                    </FormItem>
+                )}
+                />
+                <DialogFooter>
+                <Button type="submit" className="w-full">Confirmar Agendamento</Button>
+                </DialogFooter>
+            </form>
+            </Form>
+        </div>
       </DialogContent>
     </Dialog>
   );
