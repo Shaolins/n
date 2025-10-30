@@ -47,3 +47,12 @@ export const pricing = [
     { service: "O Serviço Completo (Corte e Barba)", price: "90" },
     { service: "Tratamento de Coloração", price: "A partir de 80" },
 ];
+
+export const exclusiveServices = [
+  { service: "Barba (Barbear à navalha, toalha quente, modelagem)", price: "70,00" },
+  { service: "Tratamentos (Hidratação capilar, esfoliação facial)", price: "50,00" },
+  { service: "Corte de Cabelo (Estilos clássicos, tesoura, degradê)", price: "85,00" },
+  { service: "Pacote: Combo cabelo + barba", price: "130,00" },
+  { service: "Pacote: Dia do noivo", price: "450,00" },
+  { service: "Linha própria de 5 cosméticos masculinos premium", price: "350,00" },
+];
