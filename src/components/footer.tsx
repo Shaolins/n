@@ -35,15 +35,19 @@ export default function Footer() {
           <div className="grid gap-4">
             <h3 className="font-headline text-xl font-semibold">Horários</h3>
             <div className="flex justify-between text-muted-foreground">
-              <span>Terça - Sexta</span>
-              <span>09:00 - 19:00</span>
+              <span>Segunda - Sexta</span>
+              <span>07:00 - 20:00</span>
             </div>
             <div className="flex justify-between text-muted-foreground">
               <span>Sábado</span>
-              <span>10:00 - 18:00</span>
+              <span>07:00 - 16:00</span>
             </div>
             <div className="flex justify-between text-muted-foreground">
-              <span>Domingo - Segunda</span>
+              <span>Feriados</span>
+              <span>07:00 - 13:00</span>
+            </div>
+            <div className="flex justify-between text-muted-foreground">
+              <span>Domingo</span>
               <span>Fechado</span>
             </div>
             <div className="flex gap-4 mt-4">
