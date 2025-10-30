@@ -56,6 +56,6 @@ export const exclusiveServices = [
   { service: "Linha própria de 5 cosméticos masculinos premium", price: "350,00" },
 ];
 
-const allPricingServices = pricing.map(p => p.service);
+export const allServicesForBooking = pricing.map(p => ({ name: p.service }));
 
-export const allServicesForBooking = [...new Set(allPricingServices)].map(serviceName => ({ name: serviceName }));
+export const exclusiveServicesForBooking = exclusiveServices.map(s => ({ name: s.service }));

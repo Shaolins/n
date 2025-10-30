@@ -5,7 +5,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
-import { CalendarIcon, Clock, User, Scissors } from "lucide-react";
+import { CalendarIcon, Clock, User, Scissors, Sparkles } from "lucide-react";
 import { format } from "date-fns";
 import { ptBR } from "date-fns/locale";
 
@@ -43,14 +43,18 @@ import {
 import { Input } from "@/components/ui/input";
 import { useToast } from "@/hooks/use-toast";
 import { cn } from "@/lib/utils";
-import { allServicesForBooking, stylists } from "@/lib/data";
+import { allServicesForBooking, stylists, exclusiveServicesForBooking } from "@/lib/data";
 
 const bookingSchema = z.object({
   name: z.string().min(2, "O nome deve ter pelo menos 2 caracteres."),
-  service: z.string({ required_error: "Por favor, selecione um serviço." }),
+  service: z.string().optional(),
+  exclusiveService: z.string().optional(),
   stylist: z.string({ required_error: "Por favor, selecione um estilista." }),
   date: z.date({ required_error: "A data é obrigatória." }),
   time: z.string({ required_error: "Por favor, selecione um horário." }),
+}).refine(data => data.service || data.exclusiveService, {
+  message: "Por favor, selecione ao menos um serviço.",
+  path: ["service"],
 });
 
 const availableTimes = [
@@ -71,10 +75,10 @@ export function BookingModal({ children }: { children: React.ReactNode }) {
 
   function onSubmit(data: z.infer<typeof bookingSchema>) {
     console.log(data);
-    const selectedService = allServicesForBooking.find(s => s.name === data.service);
+    const selectedService = data.service || data.exclusiveService;
     toast({
       title: "Agendamento Confirmado!",
-      description: `Obrigado, ${data.name}! Seu horário para um ${selectedService?.name} com ${data.stylist} está marcado para ${format(data.date, "PPP", { locale: ptBR })} às ${data.time}.`,
+      description: `Obrigado, ${data.name}! Seu horário para um ${selectedService} com ${data.stylist} está marcado para ${format(data.date, "PPP", { locale: ptBR })} às ${data.time}.`,
     });
     setOpen(false);
     form.reset();
@@ -83,7 +87,7 @@ export function BookingModal({ children }: { children: React.ReactNode }) {
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>{children}</DialogTrigger>
-      <DialogContent className="sm:max-w-[380px] bg-background max-h-[90vh] overflow-y-auto">
+      <DialogContent className="sm:max-w-[380px] max-h-[90vh] overflow-y-auto">
         <DialogHeader>
           <DialogTitle className="font-headline text-2xl">Agende um Horário</DialogTitle>
           <DialogDescription>
@@ -117,6 +121,26 @@ export function BookingModal({ children }: { children: React.ReactNode }) {
                     </FormControl>
                     <SelectContent>
                       {allServicesForBooking.map((service) => (
+                        <SelectItem key={service.name} value={service.name}>{service.name}</SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="exclusiveService"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Serviços Exclusivos</FormLabel>
+                  <Select onValueChange={field.onChange} defaultValue={field.value}>
+                    <FormControl>
+                      <SelectTrigger><Sparkles className="mr-2 h-4 w-4" /> <SelectValue placeholder="Selecione um serviço exclusivo" /></SelectTrigger>
+                    </FormControl>
+                    <SelectContent>
+                      {exclusiveServicesForBooking.map((service) => (
                         <SelectItem key={service.name} value={service.name}>{service.name}</SelectItem>
                       ))}
                     </SelectContent>
