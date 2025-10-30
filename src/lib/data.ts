@@ -24,7 +24,7 @@ export const stylists = [
     specialty: "Cortes Clássicos e Fades Modernos",
   },
   {
-    name: "Samantha 'A Estilista' Carter",
+    name: "Samantha",
     bio: "Uma visionária no mundo do cabelo, Samantha traz 8 anos de paixão criativa para cada agendamento. Ela se destaca em modelagens transformadoras e trabalhos de coloração complexos, transformando seu cabelo em uma tela de autoexpressão. Sua abordagem é capturar sua personalidade única em um estilo que diz muito.",
     specialty: "Estilo Criativo e Coloração",
   },
