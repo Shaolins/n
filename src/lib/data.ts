@@ -50,7 +50,7 @@ export const pricing = [
 export const exclusiveServices = [
   { service: "Barba (Barbear à navalha, toalha quente, modelagem)", price: "70,00" },
   { service: "Tratamentos (Hidratação capilar, esfoliação facial)", price: "50,00" },
-  { service: "corte de cabelo + barba + toalha quente", price: "110,00" },
+  { service: "Corte de Cabelo + Barba + Toalha Quente", price: "110,00" },
   { service: "Pacote: Dia do noivo", price: "450,00" },
   { service: "Linha própria de 5 cosméticos masculinos premium", price: "350,00" },
 ];
