@@ -27,11 +27,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR" className="!scroll-smooth">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&family=Belleza&display=swap" rel="stylesheet" />
-      </head>
+      <head />
       <body
         className={cn(
           "min-h-screen bg-background font-body antialiased",
