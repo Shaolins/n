@@ -29,7 +29,7 @@ export const stylists = [
     specialty: "Estilo Criativo e Coloração",
   },
   {
-    name: "Marco 'O Escultor' Rossi",
+    name: "Marco",
     bio: "Marco é um mestre do cuidado pessoal com paixão pela precisão. Com 15 anos de experiência, ele esculpe barbas e realiza barbas com toalha quente com o toque de um artista. Para Marco, não é apenas um aparo; é sobre criar um visual refinado e distinto que eleva toda a sua presença.",
     specialty: "Escultura de Barba e Barbas Quentes",
   },
