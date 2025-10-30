@@ -19,8 +19,8 @@ export const services = [
 
 export const stylists = [
   {
-    name: "Alex 'A Lâmina' Johnson",
-    bio: "Com mais de uma década de maestria, Alex 'A Lâmina' Johnson é onde a barbearia clássica encontra a arte moderna. Um verdadeiro perfeccionista, ele se especializa em criar cortes clássicos impecáveis e fades modernos e nítidos, garantindo que cada cliente saia com um visual atemporal e na moda.",
+    name: "Alex",
+    bio: "Com mais de uma década de maestria, Alex é onde a barbearia clássica encontra a arte moderna. Um verdadeiro perfeccionista, ele se especializa em criar cortes clássicos impecáveis e fades modernos e nítidos, garantindo que cada cliente saia com um visual atemporal e na moda.",
     specialty: "Cortes Clássicos e Fades Modernos",
   },
   {
