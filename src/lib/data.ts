@@ -54,3 +54,10 @@ export const exclusiveServices = [
   { service: "Pacote: Dia do noivo", price: "450,00" },
   { service: "Linha própria de 5 cosméticos masculinos premium", price: "350,00" },
 ];
+
+export const allServicesForBooking = [
+  ...new Set([
+    ...pricing.map(p => p.service),
+    ...exclusiveServices.filter(s => s.service !== "Linha própria de 5 cosméticos masculinos premium").map(s => s.service)
+  ])
+].map(serviceName => ({ name: serviceName }));

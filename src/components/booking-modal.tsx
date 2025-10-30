@@ -43,7 +43,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { useToast } from "@/hooks/use-toast";
 import { cn } from "@/lib/utils";
-import { services, stylists } from "@/lib/data";
+import { allServicesForBooking, stylists } from "@/lib/data";
 
 const bookingSchema = z.object({
   name: z.string().min(2, "O nome deve ter pelo menos 2 caracteres."),
@@ -71,9 +71,10 @@ export function BookingModal({ children }: { children: React.ReactNode }) {
 
   function onSubmit(data: z.infer<typeof bookingSchema>) {
     console.log(data);
+    const selectedService = allServicesForBooking.find(s => s.name === data.service);
     toast({
       title: "Agendamento Confirmado!",
-      description: `Obrigado, ${data.name}! Seu horário para um ${services.find(s => s.name === data.service)?.name} com ${data.stylist} está marcado para ${format(data.date, "PPP", { locale: ptBR })} às ${data.time}.`,
+      description: `Obrigado, ${data.name}! Seu horário para um ${selectedService?.name} com ${data.stylist} está marcado para ${format(data.date, "PPP", { locale: ptBR })} às ${data.time}.`,
     });
     setOpen(false);
     form.reset();
@@ -115,7 +116,7 @@ export function BookingModal({ children }: { children: React.ReactNode }) {
                       <SelectTrigger><Scissors className="mr-2 h-4 w-4" /> <SelectValue placeholder="Selecione um serviço" /></SelectTrigger>
                     </FormControl>
                     <SelectContent>
-                      {services.map((service) => (
+                      {allServicesForBooking.map((service) => (
                         <SelectItem key={service.name} value={service.name}>{service.name}</SelectItem>
                       ))}
                     </SelectContent>
