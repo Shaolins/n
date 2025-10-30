@@ -12,9 +12,9 @@ import imageData from "@/lib/placeholder-images.json";
 export default function Gallery() {
   const { galleryImages } = imageData;
   return (
-    <section id="gallery" className="py-12 md:py-20 bg-background">
+    <section id="gallery" className="py-12 md:py-16 bg-background overflow-hidden">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="text-center mb-10">
+        <div className="text-center mb-8">
           <h2 className="font-headline text-3xl md:text-4xl font-bold">Galeria de Estilos</h2>
           <p className="text-md text-muted-foreground mt-3 max-w-2xl mx-auto">
             Uma prévia das transformações e estilos criados por nossos barbeiros especialistas.
