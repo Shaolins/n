@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState } from "react";
@@ -63,6 +64,9 @@ export function BookingModal({ children }: { children: React.ReactNode }) {
 
   const form = useForm<z.infer<typeof bookingSchema>>({
     resolver: zodResolver(bookingSchema),
+    defaultValues: {
+      name: "",
+    },
   });
 
   function onSubmit(data: z.infer<typeof bookingSchema>) {
