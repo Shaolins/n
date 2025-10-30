@@ -43,7 +43,6 @@ export const pricing = [
     { service: "Corte Infantil (Menores de 12 anos)", price: "40" },
     { service: "Corte Raspado", price: "35" },
     { service: "Aparo e Modelagem de Barba", price: "30" },
-    { service: "Barba com Toalha Quente", price: "45" },
     { service: "O Serviço Completo (Corte e Barba)", price: "90" },
     { service: "Tratamento de Coloração", price: "A partir de 80" },
 ];
