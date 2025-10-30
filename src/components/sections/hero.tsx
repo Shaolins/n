@@ -24,7 +24,7 @@ export default function Hero() {
         <p className="mt-4 max-w-2xl font-body text-lg md:text-xl lg:text-2xl text-neutral-200 drop-shadow-md">
           Experimente a Arte da Barbearia Premium.
           <br />
-          Onde a Tradição Encontra a Tendência.
+          Onde o Estilo Encontra a Atitude.
         </p>
         <div className="mt-8">
           <BookingModal>
