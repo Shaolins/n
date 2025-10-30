@@ -13,15 +13,15 @@ export default function Services() {
   const serviceImages = imageData.services;
 
   return (
-    <section id="services" className="py-16 md:py-24 bg-background">
+    <section id="services" className="py-12 md:py-20 bg-background">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="text-center mb-12">
-          <h2 className="font-headline text-4xl md:text-5xl font-bold">Nossos Serviços</h2>
-          <p className="text-lg text-muted-foreground mt-4 max-w-3xl mx-auto">
+        <div className="text-center mb-10">
+          <h2 className="font-headline text-3xl md:text-4xl font-bold">Nossos Serviços</h2>
+          <p className="text-md text-muted-foreground mt-3 max-w-2xl mx-auto">
             De cortes clássicos a estilos modernos, oferecemos uma gama de serviços para fazer você parecer e se sentir o seu melhor.
           </p>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map((service, index) => {
             const image = serviceImages[index];
             return (
@@ -37,9 +37,9 @@ export default function Services() {
                     />
                   )}
                 </CardHeader>
-                <CardContent className="p-6 flex-grow flex flex-col">
-                  <CardTitle className="font-headline text-xl mb-2">{service.name}</CardTitle>
-                  <CardDescription className="flex-grow">{service.description}</CardDescription>
+                <CardContent className="p-5 flex-grow flex flex-col">
+                  <CardTitle className="font-headline text-lg mb-2">{service.name}</CardTitle>
+                  <CardDescription className="flex-grow text-sm">{service.description}</CardDescription>
                 </CardContent>
               </Card>
             );

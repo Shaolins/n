@@ -18,10 +18,10 @@ export default function Hero() {
       />
       <div className="absolute inset-0 bg-black/20" />
       <div className="relative z-10 flex h-full flex-col items-center justify-center text-center text-white">
-        <h1 className="font-headline text-6xl md:text-8xl lg:text-9xl drop-shadow-lg">
+        <h1 className="font-headline text-5xl md:text-7xl lg:text-8xl drop-shadow-lg">
           Cut & Style
         </h1>
-        <p className="mt-4 max-w-2xl font-body text-lg md:text-xl lg:text-2xl text-neutral-200 drop-shadow-md">
+        <p className="mt-4 max-w-2xl font-body text-base md:text-lg lg:text-xl text-neutral-200 drop-shadow-md">
           Experimente a Arte da Barbearia Premium.
           <br />
           Onde o Estilo Encontra a Atitude.
