@@ -51,14 +51,12 @@ export const pricing = [
 export const exclusiveServices = [
   { service: "Barba (Barbear à navalha, toalha quente, modelagem)", price: "70,00" },
   { service: "Tratamentos (Hidratação capilar, esfoliação facial)", price: "50,00" },
-  { service: "Corte de Cabelo + Barba + Toalha Quente", price: "110,00" },
+  { service: "Corte de Cabelo + Barba + Toalha Quente", price: "110" },
   { service: "Pacote: Dia do noivo", price: "450,00" },
   { service: "Linha própria de 5 cosméticos masculinos premium", price: "350,00" },
 ];
 
-export const allServicesForBooking = [
-  ...new Set([
-    ...pricing.map(p => p.service),
-    ...exclusiveServices.map(s => s.service)
-  ])
-].map(serviceName => ({ name: serviceName }));
+const allPricingServices = pricing.map(p => p.service);
+const allExclusiveServices = exclusiveServices.map(s => s.service);
+
+export const allServicesForBooking = [...new Set([...allPricingServices, ...allExclusiveServices])].map(serviceName => ({ name: serviceName }));
