@@ -1,3 +1,4 @@
+
 export const services = [
   {
     name: "Corte de Cabelo Clássico",
@@ -58,6 +59,6 @@ export const exclusiveServices = [
 export const allServicesForBooking = [
   ...new Set([
     ...pricing.map(p => p.service),
-    ...exclusiveServices.filter(s => s.service !== "Linha própria de 5 cosméticos masculinos premium").map(s => s.service)
+    ...exclusiveServices.map(s => s.service)
   ])
 ].map(serviceName => ({ name: serviceName }));
