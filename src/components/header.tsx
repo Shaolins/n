@@ -9,11 +9,11 @@ import { Button } from "@/components/ui/button";
 import { BookingModal } from "@/components/booking-modal";
 
 const navLinks = [
-  { href: "#services", label: "Serviços" },
-  { href: "#stylists", label: "Estilistas" },
-  { href: "#gallery", label: "Galeria" },
-  { href: "#pricing", label: "Preços" },
-  { href: "#contact", label: "Contato" },
+  { href: "/#services", label: "Serviços" },
+  { href: "/#stylists", label: "Estilistas" },
+  { href: "/#gallery", label: "Galeria" },
+  { href: "/#pricing", label: "Preços" },
+  { href: "/#contact", label: "Contato" },
 ];
 
 export default function Header() {

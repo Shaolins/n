@@ -27,7 +27,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR" className="!scroll-smooth">
-      <head />
       <body
         className={cn(
           "min-h-screen bg-background font-body antialiased",
