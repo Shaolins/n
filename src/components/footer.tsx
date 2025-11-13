@@ -9,7 +9,7 @@ export default function Footer() {
           <div className="flex flex-col items-start gap-3">
             <Link href="/" className="flex items-center gap-2">
               <Scissors className="h-7 w-7 text-primary" />
-              <span className="font-headline text-2xl font-semibold">
+              <span className="font-headline text-2xl font-semibold text-primary">
                 Cut & Style
               </span>
             </Link>
