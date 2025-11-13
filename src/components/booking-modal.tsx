@@ -103,19 +103,27 @@ export function BookingModal({ children }: { children: React.ReactNode }) {
     },
   });
 
-  const selectedDate = useWatch({
-    control: form.control,
-    name: "date",
-  });
+  const selectedDate = useWatch({ control: form.control, name: "date" });
+  const selectedService = useWatch({ control: form.control, name: "service" });
+  const selectedExclusiveService = useWatch({ control: form.control, name: "exclusiveService" });
 
   const availableTimes = useMemo(() => generateAvailableTimes(selectedDate), [selectedDate]);
 
+  const availableStylists = useMemo(() => {
+    const serviceName = selectedService || selectedExclusiveService;
+    if (!serviceName) {
+      return stylists;
+    }
+    return stylists.filter(stylist => stylist.services.includes(serviceName));
+  }, [selectedService, selectedExclusiveService]);
+
+
   function onSubmit(data: z.infer<typeof bookingSchema>) {
     console.log(data);
-    const selectedService = data.service || data.exclusiveService;
+    const finalService = data.service || data.exclusiveService;
     toast({
       title: "Agendamento Confirmado!",
-      description: `Obrigado, ${data.name}! Seu horário para um ${selectedService} com ${data.stylist} está marcado para ${format(data.date, "PPP", { locale: ptBR })} às ${data.time}.`,
+      description: `Obrigado, ${data.name}! Seu horário para um ${finalService} com ${data.stylist} está marcado para ${format(data.date, "PPP", { locale: ptBR })} às ${data.time}.`,
     });
     setOpen(false);
     form.reset();
@@ -124,7 +132,7 @@ export function BookingModal({ children }: { children: React.ReactNode }) {
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>{children}</DialogTrigger>
-      <DialogContent className="sm:max-w-[380px] max-h-[90vh] overflow-y-auto">
+      <DialogContent className="sm:max-w-[380px]">
         <DialogHeader>
           <DialogTitle className="font-headline text-2xl">Agende um Horário</DialogTitle>
           <DialogDescription>
@@ -153,10 +161,14 @@ export function BookingModal({ children }: { children: React.ReactNode }) {
                   render={({ field }) => (
                     <FormItem>
                       <FormLabel>Serviços</FormLabel>
-                      <Select onValueChange={(value) => {
+                      <Select 
+                        onValueChange={(value) => {
                           field.onChange(value);
                           form.setValue('exclusiveService', '');
-                      }} value={field.value}>
+                          form.resetField('stylist');
+                        }} 
+                        value={field.value}
+                      >
                         <FormControl>
                           <SelectTrigger><Scissors className="mr-2 h-4 w-4" /> <SelectValue placeholder="Selecione um serviço" /></SelectTrigger>
                         </FormControl>
@@ -176,10 +188,14 @@ export function BookingModal({ children }: { children: React.ReactNode }) {
                   render={({ field }) => (
                     <FormItem>
                       <FormLabel>Serviços Exclusivos</FormLabel>
-                      <Select onValueChange={(value) => {
+                      <Select 
+                        onValueChange={(value) => {
                           field.onChange(value);
                           form.setValue('service', '');
-                      }} value={field.value}>
+                          form.resetField('stylist');
+                        }} 
+                        value={field.value}
+                      >
                         <FormControl>
                           <SelectTrigger><Sparkles className="mr-2 h-4 w-4" /> <SelectValue placeholder="Selecione um serviço exclusivo" /></SelectTrigger>
                         </FormControl>
@@ -199,14 +215,18 @@ export function BookingModal({ children }: { children: React.ReactNode }) {
                 render={({ field }) => (
                     <FormItem>
                     <FormLabel>Estilista</FormLabel>
-                    <Select onValueChange={field.onChange} defaultValue={field.value}>
+                    <Select onValueChange={field.onChange} value={field.value || ''} disabled={!selectedService && !selectedExclusiveService}>
                         <FormControl>
-                        <SelectTrigger><User className="mr-2 h-4 w-4" /><SelectValue placeholder="Selecione um estilista" /></SelectTrigger>
+                        <SelectTrigger><User className="mr-2 h-4 w-4" /><SelectValue placeholder={!selectedService && !selectedExclusiveService ? "Selecione um serviço primeiro" : "Selecione um estilista"} /></SelectTrigger>
                         </FormControl>
                         <SelectContent>
-                        {stylists.map((stylist) => (
-                            <SelectItem key={stylist.name} value={stylist.name}>{stylist.name}</SelectItem>
-                        ))}
+                        {availableStylists.length > 0 ? (
+                            availableStylists.map((stylist) => (
+                                <SelectItem key={stylist.name} value={stylist.name}>{stylist.name}</SelectItem>
+                            ))
+                        ) : (
+                           <SelectItem value="no-stylist" disabled>Nenhum estilista disponível</SelectItem>
+                        )}
                         </SelectContent>
                     </Select>
                     <FormMessage />
