@@ -8,45 +8,45 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="flex flex-col items-start gap-3">
             <Link href="/" className="flex items-center gap-2 text-foreground">
-              <Scissors className="h-7 w-7" />
-              <span className="font-headline text-2xl font-semibold">
+              <Scissors className="h-7 w-7 text-primary" />
+              <span className="font-headline text-2xl font-semibold text-primary">
                 Cut & Style
               </span>
             </Link>
-            <p className="text-muted-foreground max-w-sm text-sm">
+            <p className="text-card-foreground/80 max-w-sm text-sm">
               O destino principal para cuidados de luxo e estilo atemporal. Experimente a arte da barbearia.
             </p>
           </div>
           <div className="grid gap-3">
             <h3 className="font-headline text-lg font-semibold">Contato</h3>
-            <div className="flex items-center gap-3 text-muted-foreground text-sm">
+            <div className="flex items-center gap-3 text-card-foreground/80 text-sm">
               <MapPin className="h-4 w-4 flex-shrink-0" />
               <span>Rua Gen. Porfírio da Paz, 778, Vila Bancaria, São Paulo - SP, 03918-040</span>
             </div>
-            <div className="flex items-center gap-3 text-muted-foreground text-sm">
+            <div className="flex items-center gap-3 text-card-foreground/80 text-sm">
               <Phone className="h-4 w-4 flex-shrink-0" />
               <span>(11) 95447-1955</span>
             </div>
-            <div className="flex items-center gap-3 text-muted-foreground text-sm">
+            <div className="flex items-center gap-3 text-card-foreground/80 text-sm">
               <Mail className="h-4 w-4 flex-shrink-0" />
               <span>contato@cutandstyle.com</span>
             </div>
           </div>
           <div className="grid gap-2 text-sm">
             <h3 className="font-headline text-lg font-semibold">Horários</h3>
-            <div className="flex justify-between text-muted-foreground">
+            <div className="flex justify-between text-card-foreground/80">
               <span>Segunda - Sexta</span>
               <span>07:00 - 20:00</span>
             </div>
-            <div className="flex justify-between text-muted-foreground">
+            <div className="flex justify-between text-card-foreground/80">
               <span>Sábado</span>
               <span>07:00 - 16:00</span>
             </div>
-            <div className="flex justify-between text-muted-foreground">
+            <div className="flex justify-between text-card-foreground/80">
               <span>Feriados</span>
               <span>07:00 - 13:00</span>
             </div>
-            <div className="flex justify-between text-muted-foreground">
+            <div className="flex justify-between text-card-foreground/80">
               <span>Domingo</span>
               <span>Fechado</span>
             </div>
