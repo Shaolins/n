@@ -4,6 +4,7 @@ import Services from "@/components/sections/services";
 import Stylists from "@/components/sections/stylists";
 import Gallery from "@/components/sections/gallery";
 import Pricing from "@/components/sections/pricing";
+import Products from "@/components/sections/products";
 import Footer from "@/components/footer";
 
 export default function Home() {
@@ -16,6 +17,7 @@ export default function Home() {
         <Stylists />
         <Gallery />
         <Pricing />
+        <Products />
       </main>
       <Footer />
     </div>

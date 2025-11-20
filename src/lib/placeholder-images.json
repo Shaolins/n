@@ -79,5 +79,22 @@
       "alt": "Penteado de transformação do cliente 7",
       "aiHint": "hairstyle"
     }
+  ],
+  "productImages": [
+    {
+      "src": "https://picsum.photos/seed/product1/600/600",
+      "alt": "Embalagem de uma cera modeladora para cabelo.",
+      "aiHint": "hair wax product"
+    },
+    {
+      "src": "https://picsum.photos/seed/product2/600/600",
+      "alt": "Frasco de um óleo para barba.",
+      "aiHint": "beard oil product"
+    },
+    {
+      "src": "https://picsum.photos/seed/product3/600/600",
+      "alt": "Embalagem de um shampoo masculino.",
+      "aiHint": "shampoo product"
+    }
   ]
 }

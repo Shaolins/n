@@ -13,6 +13,7 @@ const navLinks = [
   { href: "/#stylists", label: "Estilistas" },
   { href: "/#gallery", label: "Galeria" },
   { href: "/#pricing", label: "Preços" },
+  { href: "/#products", label: "Produtos" },
   { href: "/#contact", label: "Contato" },
 ];
 
