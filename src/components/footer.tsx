@@ -13,7 +13,7 @@ export default function Footer() {
                 Cut & Style
               </span>
             </Link>
-            <p className="text-white max-w-sm text-sm">
+            <p className="text-foreground/80 max-w-sm text-sm">
               O destino principal para cuidados de luxo e estilo atemporal. Experimente a arte da barbearia.
             </p>
           </div>
