@@ -17,7 +17,7 @@ export default function Services() {
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-8">
           <h2 className="font-headline text-3xl md:text-4xl font-bold text-primary">Nossos Serviços</h2>
-          <p className="text-md text-muted-foreground mt-3 max-w-2xl mx-auto">
+          <p className="text-md text-foreground/80 mt-3 max-w-2xl mx-auto">
             De cortes clássicos a estilos modernos, oferecemos uma gama de serviços para fazer você parecer e se sentir o seu melhor.
           </p>
         </div>
@@ -39,7 +39,7 @@ export default function Services() {
                 </CardHeader>
                 <CardContent className="p-5 flex-grow flex flex-col">
                   <CardTitle className="font-headline text-lg mb-2">{service.name}</CardTitle>
-                  <CardDescription className="flex-grow text-sm text-foreground/90">{service.description}</CardDescription>
+                  <CardDescription className="flex-grow text-sm text-white">{service.description}</CardDescription>
                 </CardContent>
               </Card>
             );
