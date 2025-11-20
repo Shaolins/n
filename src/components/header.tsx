@@ -37,7 +37,7 @@ export default function Header() {
       <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
         <Link href="/" className="flex items-center gap-2 text-foreground">
           <Scissors className="h-6 w-6 text-primary" />
-          <span className="font-headline text-2xl font-semibold">
+          <span className="font-headline text-2xl font-semibold text-foreground/80">
             Cut & Style
           </span>
         </Link>
