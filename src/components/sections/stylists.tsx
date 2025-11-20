@@ -17,8 +17,8 @@ export default function Stylists() {
     <section id="stylists" className="py-12 md:py-16 bg-card overflow-hidden">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-8">
-          <h2 className="font-headline text-3xl md:text-4xl font-bold">Conheça Nossos Estilistas</h2>
-          <p className="text-md text-muted-foreground mt-3 max-w-3xl mx-auto">
+          <h2 className="font-headline text-3xl md:text-4xl font-bold text-[#B9975B]">Conheça Nossos Estilistas</h2>
+          <p className="text-md text-[#B9975B]/80 mt-3 max-w-3xl mx-auto">
             Nossa talentosa equipe de estilistas apaixonados é dedicada à arte da barbearia e à satisfação do cliente.
           </p>
         </div>
@@ -36,7 +36,7 @@ export default function Stylists() {
                     data-ai-hint={image.aiHint}
                     className="rounded-full object-cover border-4 border-accent"
                   />}
-                  <CardTitle className="font-headline text-xl mt-4">{stylist.name}</CardTitle>
+                  <CardTitle className="font-headline text-xl mt-4 text-[#B9975B]">{stylist.name}</CardTitle>
                   <Badge variant="secondary" className="mt-2 text-xs">{stylist.specialty}</Badge>
                 </CardHeader>
                 <CardContent className="p-0 mt-3">
