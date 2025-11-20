@@ -37,7 +37,7 @@ export default function Stylists() {
                     className="rounded-full object-cover border-4 border-accent"
                   />}
                   <CardTitle className="font-headline text-xl mt-4 text-primary">{stylist.name}</CardTitle>
-                  <Badge variant="secondary" className="mt-2 text-xs">{stylist.specialty}</Badge>
+                  <Badge variant="default" className="mt-2 text-xs">{stylist.specialty}</Badge>
                 </CardHeader>
                 <CardContent className="p-0 mt-3">
                   <CardDescription className="text-sm text-foreground/80">
