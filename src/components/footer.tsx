@@ -19,34 +19,34 @@ export default function Footer() {
           </div>
           <div className="grid gap-3">
             <h3 className="font-headline text-lg font-semibold text-primary">Contato</h3>
-            <div className="flex items-center gap-3 text-white text-sm">
+            <div className="flex items-center gap-3 text-foreground/80 text-sm">
               <MapPin className="h-4 w-4 flex-shrink-0" />
               <span>Rua Gen. Porfírio da Paz, 778, Vila Bancaria, São Paulo - SP, 03918-040</span>
             </div>
-            <div className="flex items-center gap-3 text-white text-sm">
+            <div className="flex items-center gap-3 text-foreground/80 text-sm">
               <Phone className="h-4 w-4 flex-shrink-0" />
               <span>(11) 95447-1955</span>
             </div>
-            <div className="flex items-center gap-3 text-white text-sm">
+            <div className="flex items-center gap-3 text-foreground/80 text-sm">
               <Mail className="h-4 w-4 flex-shrink-0" />
               <span>contato@cutandstyle.com</span>
             </div>
           </div>
           <div className="grid gap-2 text-sm">
             <h3 className="font-headline text-lg font-semibold text-primary">Horários</h3>
-            <div className="flex justify-between text-white">
+            <div className="flex justify-between text-foreground/80">
               <span>Segunda - Sexta</span>
               <span>07:00 - 20:00</span>
             </div>
-            <div className="flex justify-between text-white">
+            <div className="flex justify-between text-foreground/80">
               <span>Sábado</span>
               <span>07:00 - 16:00</span>
             </div>
-            <div className="flex justify-between text-white">
+            <div className="flex justify-between text-foreground/80">
               <span>Feriados</span>
               <span>07:00 - 13:00</span>
             </div>
-            <div className="flex justify-between text-white">
+            <div className="flex justify-between text-foreground/80">
               <span>Domingo</span>
               <span>Fechado</span>
             </div>
