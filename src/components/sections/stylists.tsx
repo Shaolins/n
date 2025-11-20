@@ -40,7 +40,7 @@ export default function Stylists() {
                   <Badge variant="secondary" className="mt-2 text-xs">{stylist.specialty}</Badge>
                 </CardHeader>
                 <CardContent className="p-0 mt-3">
-                  <CardDescription className="text-sm text-white">
+                  <CardDescription className="text-sm text-foreground/80">
                     {stylist.bio}
                   </CardDescription>
                 </CardContent>
