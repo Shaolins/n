@@ -4,14 +4,14 @@
 
 @layer base {
   :root {
-    --background: 208 25% 16%; /* #1F2A33 */
+    --background: 210 17% 10%; /* #14191E */
     --foreground: 0 0% 98%; /* #FAFAFA */
     --card: 208 24% 20%; /* um pouco mais claro que o fundo */
     --card-foreground: 0 0% 98%;
-    --popover: 208 25% 16%;
+    --popover: 210 17% 10%;
     --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%; /* Branco para contraste */
-    --primary-foreground: 208 25% 16%; /* Texto escuro no botão branco */
+    --primary: 186 46% 19%; /* #1B4347 - Azure escuro */
+    --primary-foreground: 0 0% 98%; /* Branco para contraste */
     --secondary: 240 5% 9%; /* #0D0D0F */
     --secondary-foreground: 0 0% 98%;
     --muted: 208 24% 25%;
@@ -22,19 +22,19 @@
     --destructive-foreground: 0 0% 98%;
     --border: 208 24% 25%;
     --input: 208 24% 25%;
-    --ring: 0 0% 98%;
+    --ring: 186 46% 19%;
     --radius: 0.5rem;
   }
 
   .dark {
-    --background: 208 25% 16%;
+    --background: 210 17% 10%;
     --foreground: 0 0% 98%;
     --card: 208 24% 20%;
     --card-foreground: 0 0% 98%;
-    --popover: 208 25% 16%;
+    --popover: 210 17% 10%;
     --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 208 25% 16%;
+    --primary: 186 46% 19%;
+    --primary-foreground: 0 0% 98%;
     --secondary: 240 5% 9%;
     --secondary-foreground: 0 0% 98%;
     --muted: 208 24% 25%;
@@ -45,7 +45,7 @@
     --destructive-foreground: 0 0% 98%;
     --border: 208 24% 25%;
     --input: 208 24% 25%;
-    --ring: 0 0% 98%;
+    --ring: 186 46% 19%;
   }
 }
 
