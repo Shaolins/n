@@ -15,7 +15,7 @@ export default function Pricing() {
     <section id="pricing" className="py-8 md:py-12 bg-card overflow-hidden">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-8">
-          <h2 className="font-headline text-2xl md:text-3xl font-bold">Tabela de Preços</h2>
+          <h2 className="font-headline text-2xl md:text-3xl font-bold text-primary">Tabela de Preços</h2>
           <p className="text-md text-muted-foreground mt-3 max-w-3xl mx-auto">
             Preços justos para serviços premium. Um bom cuidado pessoal é um investimento em você mesmo.
           </p>
@@ -42,7 +42,7 @@ export default function Pricing() {
         </div>
 
         <div className="text-center mt-12 mb-8">
-          <h2 className="font-headline text-2xl md:text-3xl font-bold">Nossos Serviços Exclusivos</h2>
+          <h2 className="font-headline text-2xl md:text-3xl font-bold text-primary">Nossos Serviços Exclusivos</h2>
         </div>
         <div className="max-w-4xl mx-auto">
           <div className="border rounded-lg overflow-hidden shadow-lg">

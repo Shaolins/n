@@ -16,9 +16,9 @@ export default function Hero() {
         className="object-cover"
         priority
       />
-      <div className="absolute inset-0 bg-black/20" />
-      <div className="relative z-10 flex h-full flex-col items-center justify-center text-center text-white">
-        <h1 className="font-headline text-5xl md:text-6xl drop-shadow-lg">
+      <div className="absolute inset-0 bg-black/60" />
+      <div className="relative z-10 flex h-full flex-col items-center justify-center text-center">
+        <h1 className="font-headline text-5xl md:text-6xl drop-shadow-lg text-primary">
           Cut & Style
         </h1>
         <p className="mt-4 max-w-2xl font-body text-base md:text-lg text-neutral-200 drop-shadow-md">

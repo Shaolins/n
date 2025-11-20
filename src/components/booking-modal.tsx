@@ -134,7 +134,7 @@ export function BookingModal({ children }: { children: React.ReactNode }) {
       <DialogTrigger asChild>{children}</DialogTrigger>
       <DialogContent className="sm:max-w-[380px]">
         <DialogHeader>
-          <DialogTitle className="font-headline text-2xl">Agende um Horário</DialogTitle>
+          <DialogTitle className="font-headline text-2xl text-primary">Agende um Horário</DialogTitle>
           <DialogDescription>
             Escolha seu serviço, estilista e horário. Estamos ansiosos para te ver.
           </DialogDescription>
