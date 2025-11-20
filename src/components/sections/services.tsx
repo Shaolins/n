@@ -39,7 +39,7 @@ export default function Services() {
                 </CardHeader>
                 <CardContent className="p-5 flex-grow flex flex-col">
                   <CardTitle className="font-headline text-lg mb-2">{service.name}</CardTitle>
-                  <CardDescription className="flex-grow text-sm text-white">{service.description}</CardDescription>
+                  <CardDescription className="flex-grow text-sm text-foreground/80">{service.description}</CardDescription>
                 </CardContent>
               </Card>
             );
