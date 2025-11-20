@@ -35,9 +35,9 @@ export default function Header() {
       )}
     >
       <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
-        <Link href="/" className="flex items-center gap-2">
-          <Scissors className="h-6 w-6 text-primary" />
-          <span className="font-headline text-2xl font-semibold text-primary">
+        <Link href="/" className="flex items-center gap-2 text-foreground">
+          <Scissors className="h-6 w-6" />
+          <span className="font-headline text-2xl font-semibold">
             Cut & Style
           </span>
         </Link>
@@ -46,7 +46,7 @@ export default function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-primary/80 transition-colors hover:text-primary"
+              className="text-sm font-medium text-foreground/80 transition-colors hover:text-foreground"
             >
               {link.label}
             </Link>

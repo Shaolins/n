@@ -26,7 +26,7 @@ export default function Stylists() {
           {stylists.map((stylist, index) => {
             const image = stylistImages[index];
             return (
-              <Card key={stylist.name} className="text-center flex flex-col items-center p-5 border-2 border-transparent hover:border-primary transition-all duration-300 hover:shadow-xl">
+              <Card key={stylist.name} className="text-center flex flex-col items-center p-5 border-2 border-transparent hover:border-secondary transition-all duration-300 hover:shadow-xl">
                 <CardHeader className="p-0 items-center">
                   {image && <Image
                     src={image.src}
@@ -37,7 +37,7 @@ export default function Stylists() {
                     className="rounded-full object-cover border-4 border-accent"
                   />}
                   <CardTitle className="font-headline text-xl mt-4">{stylist.name}</CardTitle>
-                  <Badge variant="secondary" className="mt-2 text-xs bg-accent/20 text-accent-foreground">{stylist.specialty}</Badge>
+                  <Badge variant="secondary" className="mt-2 text-xs">{stylist.specialty}</Badge>
                 </CardHeader>
                 <CardContent className="p-0 mt-3">
                   <CardDescription className="text-sm">
