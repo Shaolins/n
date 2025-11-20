@@ -21,7 +21,7 @@ export default function Hero() {
         <h1 className="font-headline text-5xl md:text-6xl drop-shadow-lg text-primary">
           Cut & Style
         </h1>
-        <p className="mt-4 max-w-2xl font-body text-base md:text-lg text-neutral-200 drop-shadow-md">
+        <p className="mt-4 max-w-2xl font-body text-base md:text-lg text-foreground/80 drop-shadow-md">
           Experimente a Arte da Barbearia Premium.
           <br />
           Onde o Estilo Encontra a Atitude.
