@@ -26,13 +26,6 @@ export default function Hero() {
           <br />
           Onde o Estilo Encontra a Atitude.
         </p>
-        <div className="mt-8">
-          <BookingModal>
-            <Button size="lg" variant="default" className="bg-primary hover:bg-primary/90 text-primary-foreground">
-              Agende Seu Horário
-            </Button>
-          </BookingModal>
-        </div>
         <div className="absolute bottom-10 animate-bounce">
             <a href="#services">
                 <ArrowDown className="h-8 w-8 text-white/70" />
