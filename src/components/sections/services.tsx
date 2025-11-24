@@ -11,6 +11,7 @@ import imageData from "@/lib/placeholder-images.json";
 
 export default function Services() {
   const serviceImages = imageData.services;
+  const displayedServices = services.slice(0, 4);
 
   return (
     <section id="services" className="py-12 md:py-16 bg-background overflow-hidden">
@@ -22,7 +23,7 @@ export default function Services() {
           </p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {services.map((service, index) => {
+          {displayedServices.map((service, index) => {
             const image = serviceImages[index];
             return (
               <Card key={service.name} className="overflow-hidden group transform transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl flex flex-col">
