@@ -26,39 +26,24 @@ export const services = [
     isExclusive: false
   },
   {
-    name: "Corte Infantil (Menores de 12 anos)",
-    price: "40",
-    isExclusive: false
+    name: "Barba (Barbear à navalha, toalha quente, modelagem)",
+    price: "70",
+    isExclusive: true,
   },
   {
-    name: "Corte Raspado",
-    price: "35",
-    isExclusive: false
+    name: "Tratamentos (Hidratação capilar, esfoliação facial)",
+    price: "50",
+    isExclusive: true,
   },
   {
-    name: "Tratamento de Coloração",
-    price: "A partir de 80",
-    isExclusive: false
+    name: "Corte de Cabelo + Barba + Toalha Quente",
+    price: "110",
+    isExclusive: true,
   },
-  { 
-    name: "Barba (Barbear à navalha, toalha quente, modelagem)", 
-    price: "70,00", 
-    isExclusive: true 
-  },
-  { 
-    name: "Tratamentos (Hidratação capilar, esfoliação facial)", 
-    price: "50,00", 
-    isExclusive: true 
-  },
-  { 
-    name: "Corte de Cabelo + Barba + Toalha Quente", 
-    price: "110", 
-    isExclusive: true 
-  },
-  { 
-    name: "Pacote: Dia do noivo", 
-    price: "450,00", 
-    isExclusive: true 
+  {
+    name: "Pacote: Dia do noivo",
+    price: "450",
+    isExclusive: true,
   },
 ];
 
@@ -66,8 +51,6 @@ export const services = [
 const alexServices = [
   "Corte de Cabelo Clássico",
   "Fade Moderno",
-  "Corte Infantil (Menores de 12 anos)",
-  "Corte Raspado",
   "O Serviço Completo",
   "Corte de Cabelo + Barba + Toalha Quente",
   "Pacote: Dia do noivo",
@@ -120,4 +103,3 @@ export const exclusiveServicesForBooking = services
 
 export const pricing = services.filter(s => !s.isExclusive);
 export const exclusiveServices = services.filter(s => s.isExclusive);
-

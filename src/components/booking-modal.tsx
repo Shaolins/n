@@ -287,7 +287,7 @@ export function BookingModal({ children }: { children: React.ReactNode }) {
                     <FormLabel>Horário</FormLabel>
                     <Select onValueChange={field.onChange} value={field.value} disabled={!selectedDate || availableTimes.length === 0}>
                         <FormControl>
-                        <SelectTrigger><Clock className="mr-2 h-4 w-4" /><SelectValue placeholder={!selectedDate ? "Selecione uma data primeiro" : "Selecione um horário"} /></SelectTrigger>
+                        <SelectTrigger><Clock className="mr-2 h-4 w-4" /><SelectValue placeholder={!selectedDate ? "Selecione uma data primeiro" : "Nenhum horário disponível"} /></SelectTrigger>
                         </FormControl>
                         <SelectContent>
                         {availableTimes.length > 0 ? (
