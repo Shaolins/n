@@ -20,6 +20,12 @@ export const services = [
     isExclusive: false
   },
   {
+    name: "Sobrancelha",
+    description: "Design e limpeza de sobrancelha para um visual mais definido.",
+    price: "25",
+    isExclusive: false
+  },
+  {
     name: "O Serviço Completo",
     description: "A experiência definitiva: um corte de cabelo personalizado, aparo de barba e um relaxante barbear com toalha quente.",
     price: "90",
@@ -54,11 +60,13 @@ const alexServices = [
   "O Serviço Completo",
   "Corte de Cabelo + Barba + Toalha Quente",
   "Pacote: Dia do noivo",
+  "Sobrancelha",
 ];
 
 const samanthaServices = [
   "Tratamento de Coloração",
   "Pacote: Dia do noivo",
+  "Sobrancelha",
 ];
 
 const marcoServices = [
@@ -68,6 +76,7 @@ const marcoServices = [
   "Tratamentos (Hidratação capilar, esfoliação facial)",
   "Corte de Cabelo + Barba + Toalha Quente",
   "Pacote: Dia do noivo",
+  "Sobrancelha",
 ];
 
 
@@ -103,4 +112,5 @@ export const exclusiveServicesForBooking = services
 
 export const pricing = services.filter(s => !s.isExclusive);
 export const exclusiveServices = services.filter(s => s.isExclusive);
+
 
