@@ -20,7 +20,7 @@ export default function Products() {
             Apresentamos nossa linha exclusiva de produtos, desenvolvida para levar a experiência Cut & Style para sua casa.
           </p>
         </div>
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-3xl mx-auto">
             <Card className="overflow-hidden group transform transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl flex flex-col bg-card">
               <CardHeader className="p-0 relative w-full aspect-video">
                 {productCollectionImage && (
