@@ -1,29 +1,74 @@
 
+
 export const services = [
   {
     name: "Corte de Cabelo Clássico",
     description: "Um corte atemporal, adaptado à sua preferência. Inclui lavagem e modelagem.",
+    price: "50",
+    isExclusive: false
   },
   {
     name: "Fade Moderno",
     description: "Um fade moderno e nítido de qualquer estilo. Mesclagem de precisão para um visual perfeito.",
+    price: "60",
+    isExclusive: false
   },
   {
     name: "Aparo e Modelagem de Barba",
     description: "Modelagem e aparo especializados para aperfeiçoar o estilo da sua barba. Inclui toalha quente.",
+    price: "30",
+    isExclusive: false
   },
   {
     name: "O Serviço Completo",
     description: "A experiência definitiva: um corte de cabelo personalizado, aparo de barba e um relaxante barbear com toalha quente.",
+    price: "90",
+    isExclusive: false
+  },
+  {
+    name: "Corte Infantil (Menores de 12 anos)",
+    price: "40",
+    isExclusive: false
+  },
+  {
+    name: "Corte Raspado",
+    price: "35",
+    isExclusive: false
+  },
+  {
+    name: "Tratamento de Coloração",
+    price: "A partir de 80",
+    isExclusive: false
+  },
+  { 
+    name: "Barba (Barbear à navalha, toalha quente, modelagem)", 
+    price: "70,00", 
+    isExclusive: true 
+  },
+  { 
+    name: "Tratamentos (Hidratação capilar, esfoliação facial)", 
+    price: "50,00", 
+    isExclusive: true 
+  },
+  { 
+    name: "Corte de Cabelo + Barba + Toalha Quente", 
+    price: "110", 
+    isExclusive: true 
+  },
+  { 
+    name: "Pacote: Dia do noivo", 
+    price: "450,00", 
+    isExclusive: true 
   },
 ];
+
 
 const alexServices = [
   "Corte de Cabelo Clássico",
   "Fade Moderno",
   "Corte Infantil (Menores de 12 anos)",
   "Corte Raspado",
-  "O Serviço Completo (Corte e Barba)",
+  "O Serviço Completo",
   "Corte de Cabelo + Barba + Toalha Quente",
   "Pacote: Dia do noivo",
 ];
@@ -35,7 +80,7 @@ const samanthaServices = [
 
 const marcoServices = [
   "Aparo e Modelagem de Barba",
-  "O Serviço Completo (Corte e Barba)",
+  "O Serviço Completo",
   "Barba (Barbear à navalha, toalha quente, modelagem)",
   "Tratamentos (Hidratação capilar, esfoliação facial)",
   "Corte de Cabelo + Barba + Toalha Quente",
@@ -64,26 +109,15 @@ export const stylists = [
   },
 ];
 
-export const galleryImages = []; // This is now managed by placeholder-images.json
+export const allServicesForBooking = services
+  .filter(s => s.name !== 'Tratamento de Coloração')
+  .filter(s => !s.isExclusive)
+  .map(s => ({ name: s.name }));
 
-export const pricing = [
-    { service: "Corte de Cabelo Clássico", price: "50" },
-    { service: "Fade Moderno", price: "60" },
-    { service: "Corte Infantil (Menores de 12 anos)", price: "40" },
-    { service: "Corte Raspado", price: "35" },
-    { service: "Aparo e Modelagem de Barba", price: "30" },
-    { service: "O Serviço Completo (Corte e Barba)", price: "90" },
-    { service: "Tratamento de Coloração", price: "A partir de 80" },
-];
+export const exclusiveServicesForBooking = services
+  .filter(s => s.isExclusive)
+  .map(s => ({ name: s.name }));
 
-export const exclusiveServices = [
-  { service: "Barba (Barbear à navalha, toalha quente, modelagem)", price: "70,00" },
-  { service: "Tratamentos (Hidratação capilar, esfoliação facial)", price: "50,00" },
-  { service: "Corte de Cabelo + Barba + Toalha Quente", price: "110" },
-  { service: "Pacote: Dia do noivo", price: "450,00" },
-  { service: "Linha própria de 5 cosméticos masculinos premium", price: "350,00" },
-];
+export const pricing = services.filter(s => !s.isExclusive);
+export const exclusiveServices = services.filter(s => s.isExclusive);
 
-export const allServicesForBooking = pricing.filter(p => p.service !== 'Tratamento de Coloração').map(p => ({ name: p.service }));
-
-export const exclusiveServicesForBooking = exclusiveServices.filter(s => s.service !== "Linha própria de 5 cosméticos masculinos premium").map(s => ({ name: s.service }));

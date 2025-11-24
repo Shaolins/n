@@ -6,11 +6,12 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { pricing, exclusiveServices } from "@/lib/data";
-import { Button } from "@/components/ui/button";
-import { BookingModal } from "@/components/booking-modal";
+import { services } from "@/lib/data";
 
 export default function Pricing() {
+  const regularServices = services.filter(s => !s.isExclusive);
+  const exclusiveServicesList = services.filter(s => s.isExclusive);
+
   return (
     <section id="pricing" className="py-8 md:py-12 bg-card overflow-hidden">
       <div className="container mx-auto px-4 md:px-6">
@@ -30,9 +31,9 @@ export default function Pricing() {
                 </TableRow>
               </TableHeader>
               <TableBody>
-                {pricing.map((item) => (
-                  <TableRow key={item.service} className="text-sm">
-                    <TableCell className="font-medium">{item.service}</TableCell>
+                {regularServices.map((item) => (
+                  <TableRow key={item.name} className="text-sm">
+                    <TableCell className="font-medium">{item.name}</TableCell>
                     <TableCell className="text-right font-semibold">R$ {item.price}</TableCell>
                   </TableRow>
                 ))}
@@ -54,9 +55,9 @@ export default function Pricing() {
                 </TableRow>
               </TableHeader>
               <TableBody>
-                {exclusiveServices.map((item) => (
-                  <TableRow key={item.service} className="text-sm">
-                    <TableCell className="font-medium">{item.service}</TableCell>
+                {exclusiveServicesList.map((item) => (
+                  <TableRow key={item.name} className="text-sm">
+                    <TableCell className="font-medium">{item.name}</TableCell>
                     <TableCell className="text-right font-semibold">R$ {item.price}</TableCell>
                   </TableRow>
                 ))}
