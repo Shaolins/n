@@ -7,6 +7,8 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import imageData from "@/lib/placeholder-images.json";
+import { BookingModal } from "../booking-modal";
+import { Button } from "../ui/button";
 
 export default function Products() {
   const { productCollectionImage } = imageData;
@@ -40,6 +42,11 @@ export default function Products() {
                 </CardDescription>
               </CardContent>
             </Card>
+        </div>
+        <div className="text-center mt-10">
+          <BookingModal>
+            <Button size="lg">Agende Seu Serviço</Button>
+          </BookingModal>
         </div>
       </div>
     </section>

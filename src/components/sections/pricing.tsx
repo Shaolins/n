@@ -67,12 +67,6 @@ export default function Pricing() {
               Além dos serviços, também oferecemos uma linha própria de 5 cosméticos masculinos premium, para complementar sua rotina de cuidados.
             </p>
         </div>
-
-        <div className="text-center mt-10">
-            <BookingModal>
-                <Button size="lg">Agende Seu Serviço</Button>
-            </BookingModal>
-        </div>
       </div>
     </section>
   );
