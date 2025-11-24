@@ -36,13 +36,13 @@ export const services = [
     isExclusive: true,
   },
   {
-    name: "Corte de Cabelo + Barba + Toalha Quente",
-    price: "110",
+    name: "Pacote: Dia do noivo",
+    price: "450",
     isExclusive: true,
   },
   {
-    name: "Pacote: Dia do noivo",
-    price: "450",
+    name: "Massagens e Pacotes VIP",
+    price: "120",
     isExclusive: true,
   },
 ];
@@ -103,3 +103,4 @@ export const exclusiveServicesForBooking = services
 
 export const pricing = services.filter(s => !s.isExclusive);
 export const exclusiveServices = services.filter(s => s.isExclusive);
+
